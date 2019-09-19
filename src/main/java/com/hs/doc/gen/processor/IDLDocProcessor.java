@@ -18,6 +18,7 @@ import com.google.auto.service.AutoService;
 import com.google.gson.Gson;
 import com.hs.doc.gen.annotation.DocMethod;
 import com.hs.doc.gen.annotation.DocService;
+import com.hs.doc.gen.consts.DocGeneratorConsts;
 import com.hs.doc.gen.vo.DocMethodVo;
 import com.hs.doc.gen.vo.DocProjectVo;
 import com.hs.doc.gen.vo.DocServiceVo;
@@ -28,7 +29,7 @@ public class IDLDocProcessor extends AbstractProcessor {
 	@Override
 	public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {	
 		DocProjectVo project = new DocProjectVo();
-		project.setProject("test-service");
+		project.setProject(DocGeneratorConsts.DOC_GEN_PROJECT_ROOT_NAME);
 		
 		List<DocServiceVo> services = new ArrayList<>();
 		for (Element annotation : roundEnv.getElementsAnnotatedWith(DocService.class)) {
