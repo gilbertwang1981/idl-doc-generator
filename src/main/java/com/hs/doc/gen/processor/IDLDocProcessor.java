@@ -28,12 +28,13 @@ public class IDLDocProcessor extends AbstractProcessor {
 				for (Element methodAnno : annotation.getEnclosedElements()) {
 					DocMethod doc = methodAnno.getAnnotation(DocMethod.class);
 					if (doc != null) {
-						System.out.println("接口定义：\n" + 
-								"\t接口名称：" + doc.name() + "\n" + 
-								"\t请求方法：" + doc.method()[0] + "\n" + 
-								"\tMIME类型：" + doc.produces()[0] + "\n" + 
-								"\t接口描述：" + doc.desc() + "\n" + 
-								"\t接口定义文件：" + doc.idl());
+						System.out.println("\t接口定义：\n" + 
+								"\t\t接口名称：" + doc.name() + "\n" + 
+								"\t\t请求方法：" + doc.method()[0] + "\n" + 
+								"\t\tMIME类型：" + doc.produces()[0] + "\n" + 
+								"\t\t接口描述：" + doc.desc() + "\n" + 
+								"\t\t接口定义文件：" + doc.idl() + "\n" + 
+								"\t\t接口版本：" + doc.version());
 					}
 				}
 			}
