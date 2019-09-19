@@ -18,18 +18,21 @@ import com.google.auto.service.AutoService;
 import com.google.gson.Gson;
 import com.hs.doc.gen.annotation.DocMethod;
 import com.hs.doc.gen.annotation.DocService;
-import com.hs.doc.gen.consts.DocGeneratorConsts;
+import com.hs.doc.gen.conf.DocGeneratorConfiguration;
+import com.hs.doc.gen.util.DocFile;
 import com.hs.doc.gen.vo.DocMethodVo;
 import com.hs.doc.gen.vo.DocProjectVo;
 import com.hs.doc.gen.vo.DocServiceVo;
 
 @AutoService(Processor.class)
 public class IDLDocProcessor extends AbstractProcessor {
+	
+	private DocGeneratorConfiguration docGeneratorConfiguration = new DocGeneratorConfiguration();
 
 	@Override
 	public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {	
 		DocProjectVo project = new DocProjectVo();
-		project.setProject(DocGeneratorConsts.DOC_GEN_PROJECT_ROOT_NAME);
+		project.setProject(docGeneratorConfiguration.getProjectName());
 		
 		List<DocServiceVo> services = new ArrayList<>();
 		for (Element annotation : roundEnv.getElementsAnnotatedWith(DocService.class)) {
@@ -62,7 +65,12 @@ public class IDLDocProcessor extends AbstractProcessor {
 		project.setServices(services);
 		
 		if (!project.getServices().isEmpty()) {
-			System.out.println("输出：" + new Gson().toJson(project));
+			try {
+				DocFile.write2File(new Gson().toJson(project) , 
+					docGeneratorConfiguration.getProjectName() , 
+					docGeneratorConfiguration.getDocumentPath());
+			} catch (Exception e) {
+			}
 		}
 				
 		return false;
