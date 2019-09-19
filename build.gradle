@@ -26,12 +26,6 @@ repositories {
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web:1.5.22.RELEASE')
-	compile('org.aspectj:aspectjtools:1.8.1')
-	compile('org.aspectj:aspectjrt:1.8.9')
-	compile('org.springframework.boot:spring-boot-starter')
-	compile('com.google.protobuf:protobuf-java:3.6.1')
-	compile('com.googlecode.protobuf-java-format:protobuf-java-format:1.4')
 	compile('com.google.code.gson:gson:2.8.5')
 	
 	compile('com.google.auto.service:auto-service:1.0-rc3')
