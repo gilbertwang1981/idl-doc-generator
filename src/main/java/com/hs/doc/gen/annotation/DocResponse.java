@@ -6,18 +6,17 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target({ElementType.METHOD, ElementType.TYPE})
+@Target({ElementType.METHOD})
 @Retention(RetentionPolicy.CLASS)
 @Documented
-public @interface IDLDoc {
-	
+public @interface DocResponse {
 	/**
-	 * 接口描述
+	 * 对应的idl文件名字
 	 */
-	String description() default "";
+	String idl();
 	
 	/**
-	 * 接口版本号
+	 * idl版本
 	 */
 	String version() default "";
 }
