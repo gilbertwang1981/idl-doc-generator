@@ -34,7 +34,7 @@ public @interface DocMethod {
 	/**
 	 * 接口定义文件，文件名字
 	 */
-	String idl();
+	String [] idl();
 	
 	/**
 	 * 方法版本

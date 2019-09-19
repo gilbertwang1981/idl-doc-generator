@@ -1,5 +1,6 @@
 package com.hs.doc.gen.processor;
 
+import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -33,7 +34,7 @@ public class IDLDocProcessor extends AbstractProcessor {
 								"\t\t请求方法：" + doc.method()[0] + "\n" + 
 								"\t\tMIME类型：" + doc.produces()[0] + "\n" + 
 								"\t\t接口描述：" + doc.desc() + "\n" + 
-								"\t\t接口定义文件：" + doc.idl() + "\n" + 
+								"\t\t接口定义文件：" + Arrays.toString(doc.idl()) + "\n" + 
 								"\t\t接口版本：" + doc.version());
 					}
 				}
