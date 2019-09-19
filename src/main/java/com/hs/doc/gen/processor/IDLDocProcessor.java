@@ -1,7 +1,9 @@
 package com.hs.doc.gen.processor;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
@@ -13,34 +15,55 @@ import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 
 import com.google.auto.service.AutoService;
+import com.google.gson.Gson;
 import com.hs.doc.gen.annotation.DocMethod;
 import com.hs.doc.gen.annotation.DocService;
+import com.hs.doc.gen.vo.DocMethodVo;
+import com.hs.doc.gen.vo.DocProjectVo;
+import com.hs.doc.gen.vo.DocServiceVo;
 
 @AutoService(Processor.class)
 public class IDLDocProcessor extends AbstractProcessor {
 
 	@Override
 	public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {	
+		DocProjectVo project = new DocProjectVo();
+		project.setProject("test-service");
 		
+		List<DocServiceVo> services = new ArrayList<>();
 		for (Element annotation : roundEnv.getElementsAnnotatedWith(DocService.class)) {
 			DocService docAnn = annotation.getAnnotation(DocService.class);
 			if (docAnn != null) {
-				System.out.println("定义服务：" + docAnn.service());			
+				DocServiceVo service = new DocServiceVo();
+				service.setService(docAnn.service());
+				service.setVersion(docAnn.version());
+				
+				List<DocMethodVo> methods = new ArrayList<>();
 				for (Element methodAnno : annotation.getEnclosedElements()) {
 					DocMethod doc = methodAnno.getAnnotation(DocMethod.class);
 					if (doc != null) {
-						System.out.println("\t接口定义：\n" + 
-								"\t\t接口名称：" + doc.name() + "\n" + 
-								"\t\t请求方法：" + doc.method()[0] + "\n" + 
-								"\t\tMIME类型：" + doc.produces()[0] + "\n" + 
-								"\t\t接口描述：" + doc.desc() + "\n" + 
-								"\t\t接口定义文件：" + Arrays.toString(doc.idl()) + "\n" + 
-								"\t\t接口版本：" + doc.version());
+						DocMethodVo method = new DocMethodVo();
+						method.setDesc(doc.desc());
+						method.setIdl(Arrays.asList(doc.idl()));
+						method.setMethod(Arrays.asList(doc.method()));
+						method.setName(doc.name());
+						method.setProduces(Arrays.asList(doc.produces()));
+						method.setVersion(doc.version());
+						
+						methods.add(method);
 					}
-				}
+					service.setMethods(methods);
+				}			
+				services.add(service);	
 			}
 		}
 		
+		project.setServices(services);
+		
+		if (!project.getServices().isEmpty()) {
+			System.out.println("输出：" + new Gson().toJson(project));
+		}
+				
 		return false;
 	}
 	
