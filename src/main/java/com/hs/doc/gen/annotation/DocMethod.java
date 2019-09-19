@@ -32,6 +32,11 @@ public @interface DocMethod {
 	String desc();
 	
 	/**
+	 * 接口定义文件，文件名字
+	 */
+	String idl();
+	
+	/**
 	 * 方法版本
 	 */
 	String version() default "";

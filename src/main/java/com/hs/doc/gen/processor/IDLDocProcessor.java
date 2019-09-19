@@ -13,8 +13,6 @@ import javax.lang.model.element.TypeElement;
 
 import com.google.auto.service.AutoService;
 import com.hs.doc.gen.annotation.DocMethod;
-import com.hs.doc.gen.annotation.DocRequest;
-import com.hs.doc.gen.annotation.DocResponse;
 import com.hs.doc.gen.annotation.DocService;
 
 @AutoService(Processor.class)
@@ -26,24 +24,16 @@ public class IDLDocProcessor extends AbstractProcessor {
 		for (Element annotation : roundEnv.getElementsAnnotatedWith(DocService.class)) {
 			DocService docAnn = annotation.getAnnotation(DocService.class);
 			if (docAnn != null) {
-				System.out.println("服务：" + docAnn.service());			
-				for (Element ann : roundEnv.getElementsAnnotatedWith(DocMethod.class)) {
-					DocMethod doc = ann.getAnnotation(DocMethod.class);
+				System.out.println("定义服务：" + docAnn.service());			
+				for (Element methodAnno : annotation.getEnclosedElements()) {
+					DocMethod doc = methodAnno.getAnnotation(DocMethod.class);
 					if (doc != null) {
-						System.out.println("方法：" + doc.name() + "/" + doc.method()[0] + "/" + doc.produces()[0] + "/" + doc.desc());					
-						for (Element anno : roundEnv.getElementsAnnotatedWith(DocRequest.class)) {
-							DocRequest docAnno = anno.getAnnotation(DocRequest.class);
-							if (docAnno != null) {
-								System.out.println("入参：" + docAnno.idl());
-							}
-						}
-						
-						for (Element anno : roundEnv.getElementsAnnotatedWith(DocResponse.class)) {
-							DocResponse docAnno = anno.getAnnotation(DocResponse.class);
-							if (docAnno != null) {
-								System.out.println("出参：" + docAnno.idl());
-							}
-						}
+						System.out.println("接口定义：\n" + 
+								"\t接口名称：" + doc.name() + "\n" + 
+								"\t请求方法：" + doc.method()[0] + "\n" + 
+								"\tMIME类型：" + doc.produces()[0] + "\n" + 
+								"\t接口描述：" + doc.desc() + "\n" + 
+								"\t接口定义文件：" + doc.idl());
 					}
 				}
 			}
@@ -57,8 +47,6 @@ public class IDLDocProcessor extends AbstractProcessor {
 		Set<String> annotataions = new LinkedHashSet<String>();
 		
 		annotataions.add("com.hs.doc.gen.annotation.DocService");
-		annotataions.add("com.hs.doc.gen.annotation.DocRequest");
-		annotataions.add("com.hs.doc.gen.annotation.DocResponse");
 		annotataions.add("com.hs.doc.gen.annotation.DocMethod");
 		
 		return annotataions;
