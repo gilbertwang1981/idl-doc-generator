@@ -16,6 +16,11 @@ public @interface DocService {
 	String service();
 	
 	/**
+	 * 模块名
+	 */
+	String module();
+	
+	/**
 	 * 服务版本
 	 */
 	String version() default "";
