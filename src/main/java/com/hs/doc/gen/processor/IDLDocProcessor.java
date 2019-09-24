@@ -13,6 +13,7 @@ import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
+import javax.lang.model.type.MirroredTypeException;
 
 import com.google.auto.service.AutoService;
 import com.google.gson.Gson;
@@ -55,6 +56,18 @@ public class IDLDocProcessor extends AbstractProcessor {
 						method.setName(doc.name());
 						method.setProduces(Arrays.asList(doc.produces()));
 						method.setVersion(doc.version());
+						
+						try {
+							method.setParameterClassName(doc.parameterType().toString());
+						} catch (MirroredTypeException e) {
+							method.setParameterClassName(e.getTypeMirror().toString());
+						}
+						
+						try {
+							method.setReturnClassName(doc.returnType().toString());
+						} catch (MirroredTypeException e) {
+							method.setReturnClassName(e.getTypeMirror().toString());
+						}
 						
 						methods.add(method);
 					}

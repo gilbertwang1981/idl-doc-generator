@@ -40,4 +40,14 @@ public @interface DocMethod {
 	 * 方法版本
 	 */
 	String version() default "";
+	
+	/**
+	 * 输入参数类
+	 */
+	Class<?> parameterType();
+	
+	/**
+	 * 输出参数类
+	 */
+	Class<?> returnType();
 }

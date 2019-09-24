@@ -11,6 +11,8 @@ public class DocMethodVo {
 	private String desc;
 	private List<String> idl;
 	private String version;
+	private String parameterClassName;
+	private String returnClassName;
 	
 	public String getName() {
 		return name;
@@ -47,5 +49,17 @@ public class DocMethodVo {
 	}
 	public void setMethod(List<DocRequestMethod> method) {
 		this.method = method;
+	}
+	public String getParameterClassName() {
+		return parameterClassName;
+	}
+	public void setParameterClassName(String parameterClassName) {
+		this.parameterClassName = parameterClassName;
+	}
+	public String getReturnClassName() {
+		return returnClassName;
+	}
+	public void setReturnClassName(String returnClassName) {
+		this.returnClassName = returnClassName;
 	}
 }
