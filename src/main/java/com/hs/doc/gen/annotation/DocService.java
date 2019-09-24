@@ -24,4 +24,9 @@ public @interface DocService {
 	 * 服务版本
 	 */
 	String version() default "";
+	
+	/**
+	 *  模块地址
+	 */
+	String value();
 }

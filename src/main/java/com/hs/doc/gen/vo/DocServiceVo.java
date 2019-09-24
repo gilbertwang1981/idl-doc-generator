@@ -5,6 +5,7 @@ import java.util.List;
 public class DocServiceVo {
 	private String service;
 	private String module;
+	private String value;
 	private String version;
 	private List<DocMethodVo> methods;
 	
@@ -31,5 +32,11 @@ public class DocServiceVo {
 	}
 	public void setModule(String module) {
 		this.module = module;
+	}
+	public String getValue() {
+		return value;
+	}
+	public void setValue(String value) {
+		this.value = value;
 	}
 }

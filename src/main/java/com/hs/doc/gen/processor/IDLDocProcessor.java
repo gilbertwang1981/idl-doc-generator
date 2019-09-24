@@ -42,6 +42,7 @@ public class IDLDocProcessor extends AbstractProcessor {
 				service.setService(docAnn.service());
 				service.setVersion(docAnn.version());
 				service.setModule(docAnn.module());
+				service.setValue(docAnn.value());
 				
 				List<DocMethodVo> methods = new ArrayList<>();
 				for (Element methodAnno : annotation.getEnclosedElements()) {
