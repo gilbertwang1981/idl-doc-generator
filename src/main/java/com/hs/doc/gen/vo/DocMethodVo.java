@@ -1,6 +1,7 @@
 package com.hs.doc.gen.vo;
 
 import java.util.List;
+import java.util.Map;
 
 import com.hs.doc.gen.consts.DocRequestMethod;
 
@@ -14,6 +15,8 @@ public class DocMethodVo {
 	private String returnClassName;
 	private String parameterTypeIdl;
 	private String returnTypeIdl;
+	private Map<String , String> parameterDeclare;
+	private Map<String , String> resultDeclare;
 	
 	public String getName() {
 		return name;
@@ -68,5 +71,17 @@ public class DocMethodVo {
 	}
 	public void setReturnTypeIdl(String returnTypeIdl) {
 		this.returnTypeIdl = returnTypeIdl;
+	}
+	public Map<String , String> getParameterDeclare() {
+		return parameterDeclare;
+	}
+	public void setParameterDeclare(Map<String , String> parameterDeclare) {
+		this.parameterDeclare = parameterDeclare;
+	}
+	public Map<String , String> getResultDeclare() {
+		return resultDeclare;
+	}
+	public void setResultDeclare(Map<String , String> resultDeclare) {
+		this.resultDeclare = resultDeclare;
 	}
 }

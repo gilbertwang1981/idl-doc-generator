@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
@@ -29,6 +30,8 @@ import com.hs.doc.gen.vo.DocServiceVo;
 public class IDLDocProcessor extends AbstractProcessor {
 	
 	private DocGeneratorConfiguration docGeneratorConfiguration = new DocGeneratorConfiguration();
+	
+	private IDLFieldsProcessor fieldsProcessor = new IDLFieldsProcessor();
 
 	@Override
 	public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {	
@@ -64,11 +67,17 @@ public class IDLDocProcessor extends AbstractProcessor {
 							method.setParameterClassName(e.getTypeMirror().toString());
 						}
 						
+						Map<String, String> parameters = fieldsProcessor.processFields(method.getParameterClassName());
+						method.setParameterDeclare(parameters);
+						
 						try {
 							method.setReturnClassName(doc.returnType().toString());
 						} catch (MirroredTypeException e) {
 							method.setReturnClassName(e.getTypeMirror().toString());
 						}
+						
+						Map<String, String> results = fieldsProcessor.processFields(method.getReturnClassName());
+						method.setResultDeclare(results);
 						
 						methods.add(method);
 					}
