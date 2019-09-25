@@ -7,52 +7,59 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import com.hs.doc.gen.consts.DocRequestMethod;
 
+/**
+ * 在线文档生成器注解
+ * 
+ * @author Gilbert Wang
+ *
+ */
+
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.CLASS)
 @Documented
 public @interface DocMethod {
 	/**
-	 * 对外接口名，比如/address/getUserAddress
+	 * @return 对外接口名，比如/address/getUserAddress
 	 */
 	String name();
 	
 	/**
-	 * 请求方式
+	 * @return 请求方式，比如GET/POST etc.
 	 */
 	DocRequestMethod [] method();
 	
 	/**
-	 * MIME类型，比如：application/x-protobuf或application/json
+	 * @return MIME类型，比如：application/x-protobuf或application/json
 	 */
 	String[] produces();
 	
 	/**
-	 * 方法详细描述
+	 * @return 方法详细描述
 	 */
 	String desc();
 	
 	/**
-	 * 参数接口定义文件，文件名字，比如XXXX.proto
+	 * @return 参数接口定义文件，文件名字，比如XXXX.proto
 	 */
 	String paramterTypeIdl();
 	
 	/**
-	 * 返回值接口定义文件，文件名字，比如XXXX.proto
+	 * @return 返回值接口定义文件，文件名字，比如XXXX.proto
 	 */
 	String returnTypeIdl();
 	
 	/**
-	 * 方法版本
+	 * @return 方法版本
 	 */
-	String version() default "";
+	String version() default "1.0";
 	
 	/**
-	 * 输入参数类，比如XXXX.class
+	 * @return 输入参数类，比如XXXX.class
 	 */
 	Class<?> parameterType();
 	
 	/**
-	 * 输出参数类，比如XXXX.class
+	 * @return 输出参数类，比如XXXX.class
 	 */
 	Class<?> returnType();
 }
