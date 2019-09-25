@@ -32,9 +32,14 @@ public @interface DocMethod {
 	String desc();
 	
 	/**
-	 * 接口定义文件，文件名字
+	 * 参数接口定义文件，文件名字，比如XXXX.proto
 	 */
-	String [] idl();
+	String paramterTypeIdl();
+	
+	/**
+	 * 返回值接口定义文件，文件名字，比如XXXX.proto
+	 */
+	String returnTypeIdl();
 	
 	/**
 	 * 方法版本
@@ -42,12 +47,12 @@ public @interface DocMethod {
 	String version() default "";
 	
 	/**
-	 * 输入参数类
+	 * 输入参数类，比如XXXX.class
 	 */
 	Class<?> parameterType();
 	
 	/**
-	 * 输出参数类
+	 * 输出参数类，比如XXXX.class
 	 */
 	Class<?> returnType();
 }

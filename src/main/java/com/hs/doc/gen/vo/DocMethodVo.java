@@ -9,10 +9,11 @@ public class DocMethodVo {
 	private List<DocRequestMethod> method;
 	private List<String> produces;
 	private String desc;
-	private List<String> idl;
 	private String version;
 	private String parameterClassName;
 	private String returnClassName;
+	private String parameterTypeIdl;
+	private String returnTypeIdl;
 	
 	public String getName() {
 		return name;
@@ -31,12 +32,6 @@ public class DocMethodVo {
 	}
 	public void setDesc(String desc) {
 		this.desc = desc;
-	}
-	public List<String> getIdl() {
-		return idl;
-	}
-	public void setIdl(List<String> idl) {
-		this.idl = idl;
 	}
 	public String getVersion() {
 		return version;
@@ -61,5 +56,17 @@ public class DocMethodVo {
 	}
 	public void setReturnClassName(String returnClassName) {
 		this.returnClassName = returnClassName;
+	}
+	public String getParameterTypeIdl() {
+		return parameterTypeIdl;
+	}
+	public void setParameterTypeIdl(String parameterTypeIdl) {
+		this.parameterTypeIdl = parameterTypeIdl;
+	}
+	public String getReturnTypeIdl() {
+		return returnTypeIdl;
+	}
+	public void setReturnTypeIdl(String returnTypeIdl) {
+		this.returnTypeIdl = returnTypeIdl;
 	}
 }
