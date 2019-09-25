@@ -1,6 +1,8 @@
 package com.hs.doc.gen.processor;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,7 +17,8 @@ public class IDLFieldsProcessor {
 					field.getName().equals("memoizedIsInitialized") || 
 					field.getName().equals("DEFAULT_INSTANCE") || 
 					field.getName().equals("PARSER") || 
-					field.getName().contains("FIELD_NUMBE")) {
+					field.getName().contains("FIELD_NUMBE") || 
+					field.getName().contains("bitField")) {
 					continue;
 				}
 				
@@ -24,7 +27,14 @@ public class IDLFieldsProcessor {
 					this.processFields(subMap, field.getType().getName());
 					parameters.put(field.getName().substring(0 , field.getName().length() - 1) , subMap);
 				} else {
-					parameters.put(field.getName().substring(0 , field.getName().length() - 1) , field.getType().getName());
+					if (field.getType().getName().equals("java.util.List")) {
+						ParameterizedType pt = (ParameterizedType)field.getGenericType();
+						Map<String , Object> subMap = new HashMap<>();
+						this.processFields(subMap, pt.getActualTypeArguments()[0].getTypeName());
+						parameters.put(field.getName().substring(0 , field.getName().length() - 1) , Arrays.asList(subMap));
+					} else {
+						parameters.put(field.getName().substring(0 , field.getName().length() - 1) , field.getType().getName());
+					}
 				}
 			}
 		} catch (Exception e) {
