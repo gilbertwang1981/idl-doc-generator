@@ -15,8 +15,8 @@ public class DocMethodVo {
 	private String returnClassName;
 	private String parameterTypeIdl;
 	private String returnTypeIdl;
-	private Map<String , String> parameterDeclare;
-	private Map<String , String> resultDeclare;
+	private Map<String , Object> parameterDeclare;
+	private Map<String , Object> resultDeclare;
 	
 	public String getName() {
 		return name;
@@ -72,16 +72,16 @@ public class DocMethodVo {
 	public void setReturnTypeIdl(String returnTypeIdl) {
 		this.returnTypeIdl = returnTypeIdl;
 	}
-	public Map<String , String> getParameterDeclare() {
+	public Map<String , Object> getParameterDeclare() {
 		return parameterDeclare;
 	}
-	public void setParameterDeclare(Map<String , String> parameterDeclare) {
+	public void setParameterDeclare(Map<String , Object> parameterDeclare) {
 		this.parameterDeclare = parameterDeclare;
 	}
-	public Map<String , String> getResultDeclare() {
+	public Map<String , Object> getResultDeclare() {
 		return resultDeclare;
 	}
-	public void setResultDeclare(Map<String , String> resultDeclare) {
+	public void setResultDeclare(Map<String , Object> resultDeclare) {
 		this.resultDeclare = resultDeclare;
 	}
 }

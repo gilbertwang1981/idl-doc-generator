@@ -2,6 +2,7 @@ package com.hs.doc.gen.processor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -67,7 +68,10 @@ public class IDLDocProcessor extends AbstractProcessor {
 							method.setParameterClassName(e.getTypeMirror().toString());
 						}
 						
-						Map<String, String> parameters = fieldsProcessor.processFields(method.getParameterClassName());
+						Map<String, Object> parameters = new HashMap<>();
+						StringBuilder sbp = new StringBuilder(method.getParameterClassName());
+						sbp.replace(method.getParameterClassName().lastIndexOf(".") , method.getParameterClassName().lastIndexOf(".") + 1 , "$");
+						fieldsProcessor.processFields(parameters , sbp.toString());
 						method.setParameterDeclare(parameters);
 						
 						try {
@@ -76,7 +80,10 @@ public class IDLDocProcessor extends AbstractProcessor {
 							method.setReturnClassName(e.getTypeMirror().toString());
 						}
 						
-						Map<String, String> results = fieldsProcessor.processFields(method.getReturnClassName());
+						Map<String, Object> results = new HashMap<>();
+						StringBuilder sbr = new StringBuilder(method.getReturnClassName());
+						sbr.replace(method.getReturnClassName().lastIndexOf(".") , method.getReturnClassName().lastIndexOf(".") + 1 , "$");
+						fieldsProcessor.processFields(results , sbr.toString());
 						method.setResultDeclare(results);
 						
 						methods.add(method);
