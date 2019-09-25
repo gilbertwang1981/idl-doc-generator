@@ -51,7 +51,7 @@ public class IDLDocProcessor extends AbstractProcessor {
 					if (doc != null) {
 						DocMethodVo method = new DocMethodVo();
 						method.setDesc(doc.desc());
-						method.setParameterTypeIdl(doc.paramterTypeIdl());
+						method.setParameterTypeIdl(doc.parameterTypeIdl());
 						method.setReturnTypeIdl(doc.returnTypeIdl());
 						method.setMethod(Arrays.asList(doc.method()));
 						method.setName(doc.name());

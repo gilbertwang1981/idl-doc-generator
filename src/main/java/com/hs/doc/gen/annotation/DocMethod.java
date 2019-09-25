@@ -41,7 +41,7 @@ public @interface DocMethod {
 	/**
 	 * @return 参数接口定义文件，文件名字，比如XXXX.proto
 	 */
-	String paramterTypeIdl();
+	String parameterTypeIdl();
 	
 	/**
 	 * @return 返回值接口定义文件，文件名字，比如XXXX.proto
