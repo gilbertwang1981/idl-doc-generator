@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.hs.doc.gen.consts.DocGeneratorConsts;
+
 public class IDLFieldsProcessor {
 	public void processFields(Map<String , Object> parameters , String clazz) {
 		try {
@@ -13,12 +15,12 @@ public class IDLFieldsProcessor {
 			
 			Field [] fields = targetClass.getDeclaredFields();
 			for (Field field : fields) {
-				if (field.getName().equals("serialVersionUID") || 
-					field.getName().equals("memoizedIsInitialized") || 
-					field.getName().equals("DEFAULT_INSTANCE") || 
-					field.getName().equals("PARSER") || 
-					field.getName().contains("FIELD_NUMBE") || 
-					field.getName().contains("bitField")) {
+				if (field.getName().equals(DocGeneratorConsts.DOC_LABEL_SERIAL_VERSION) || 
+					field.getName().equals(DocGeneratorConsts.DOC_LABEL_MEM_INIT) || 
+					field.getName().equals(DocGeneratorConsts.DOC_LABEL_DEFAULT_INST) || 
+					field.getName().equals(DocGeneratorConsts.DOC_LABEL_PARSER) || 
+					field.getName().contains(DocGeneratorConsts.DOC_LABEL_FIELD_NUM) || 
+					field.getName().contains(DocGeneratorConsts.DOC_LABEL_BIT_FIELD)) {
 					continue;
 				}
 				
@@ -27,7 +29,7 @@ public class IDLFieldsProcessor {
 					this.processFields(subMap, field.getType().getName());
 					parameters.put(field.getName().substring(0 , field.getName().length() - 1) , subMap);
 				} else {
-					if (field.getType().getName().equals("java.util.List")) {
+					if (field.getType().getName().equals(DocGeneratorConsts.DOC_LABEL_LIST_NAME)) {
 						ParameterizedType pt = (ParameterizedType)field.getGenericType();
 						Map<String , Object> subMap = new HashMap<>();
 						this.processFields(subMap, pt.getActualTypeArguments()[0].getTypeName());
