@@ -1,10 +1,13 @@
 package com.hs.doc.gen.processor;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+import com.google.gson.Gson;
 import com.hs.doc.gen.consts.DocGeneratorConsts;
 
 public class IDLObjectProcessor {
@@ -26,19 +29,29 @@ public class IDLObjectProcessor {
 			String attrName = st.nextToken();
 			String typeName = st.nextToken();
 			
-			if (typeName.equals(DocGeneratorConsts.DOC_LABEL_OBJECT_NAME) || 
-				typeName.equals(DocGeneratorConsts.DOC_LABEL_STRING_NAME)) {
+			if (typeName.equals(DocGeneratorConsts.DOC_LABEL_OBJECT_NAME)) {
+				setter(object , attrName , entry.getValue() , Object.class);
+			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_STRING_NAME)) {
 				setter(object , attrName , entry.getValue() , String.class);
 			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_DOUBlE_NAME)) {
+				setter(object , attrName , entry.getValue() , double.class);
+			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_CDOUBLE_NAME)) {
 				setter(object , attrName , entry.getValue() , Double.class);
 			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_LONG_NAME)) {
+				setter(object , attrName , entry.getValue() , long.class);
+			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_CLONG_NAME)) {
 				setter(object , attrName , entry.getValue() , Long.class);
 			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_INT_NAME)) {
+				setter(object , attrName , entry.getValue() , int.class);
+			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_CINT_NAME)) {
 				setter(object , attrName , entry.getValue() , Integer.class);
+			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_LIST_NAME)) {
+				for (Object tobj : (List<?>)entry.getValue()) {
+					System.out.println("列表中的元素:" + tobj);
+				}
 			} else {
 				@SuppressWarnings("unchecked")
 				Object subObject = createAndInitializeObject(typeName , (Map<String , Object>)entry.getValue());
-				
 				setter(object , attrName , subObject , Class.forName(typeName));
 			}
 		}
@@ -55,7 +68,7 @@ public class IDLObjectProcessor {
 		return met.invoke(obj);
 	}
 	
-	public void setter(Object obj, String att, Object value, Class<?>type) throws Exception {
+	public void setter(Object obj, String att, Object value, Class<?> type) throws Exception {
 		Method met = obj.getClass().getMethod("set" + convertMethodName(att), type);
 		met.invoke(obj, value);
 	}
@@ -66,19 +79,34 @@ public class IDLObjectProcessor {
 		
 		Map<String , Object> subAttrMap = new HashMap<>();
 		subAttrMap.put("name-java.lang.String" , "王晗");
-		subAttrMap.put("age-int" , 32);
+		subAttrMap.put("age-java.lang.Integer" , 32);
+		subAttrMap.put("sex-int" , 10);
+		subAttrMap.put("userId-long" , 100011);
 		
-		attrMap.put("employee-com.hs.doc.gen.processor.Employee", subAttrMap);
+		attrMap.put("monitor-com.hs.doc.gen.processor.Employee", subAttrMap);
+		
+		List<Map<String , Object>> multi = new ArrayList<>();
+		for (int i = 0;i < 10; i ++) {
+			Map<String , Object> attr = new HashMap<>();
+			attr.put("name-java.lang.String" , "王晗" + i);
+			attr.put("age-java.lang.Integer" , 32 + i);
+			attr.put("sex-int" , 10 + i);
+			attr.put("userId-long" , 100011 + i);
+			
+			multi.add(attr);
+		}
+		attrMap.put("employee-java.util.List" , multi);
 		
 		IDLObjectProcessor processor = new IDLObjectProcessor();
-		Company company = (Company)processor.createAndInitializeObject("com.hs.doc.gen.processor.Company", attrMap);
-		System.out.println(company.getCompanyCode() + " " + company.getEmployee().getName() + " " + company.getEmployee().getAge());
+		Object object = processor.createAndInitializeObject("com.hs.doc.gen.processor.Company", attrMap);
+		System.out.println(new Gson().toJson(object));
 	}
 }
 
 class Company {
 	private String companyCode;
-	private Employee employee;
+	private List<Employee> employee;
+	private Employee monitor;
 	
 	public String getCompanyCode() {
 		return companyCode;
@@ -86,17 +114,25 @@ class Company {
 	public void setCompanyCode(String companyCode) {
 		this.companyCode = companyCode;
 	}
-	public Employee getEmployee() {
+	public List<Employee> getEmployee() {
 		return employee;
 	}
-	public void setEmployee(Employee employee) {
+	public void setEmployee(List<Employee> employee) {
 		this.employee = employee;
+	}
+	public Employee getMonitor() {
+		return monitor;
+	}
+	public void setMonitor(Employee monitor) {
+		this.monitor = monitor;
 	}
 }
 
 class Employee {
 	private String name;
 	private Integer age;
+	private int sex;
+	private long userId;
 	
 	public String getName() {
 		return name;
@@ -109,5 +145,17 @@ class Employee {
 	}
 	public void setAge(Integer age) {
 		this.age = age;
+	}
+	public int getSex() {
+		return sex;
+	}
+	public void setSex(int sex) {
+		this.sex = sex;
+	}
+	public long getUserId() {
+		return userId;
+	}
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
 }
