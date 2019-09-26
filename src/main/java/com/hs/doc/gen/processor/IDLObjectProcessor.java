@@ -55,6 +55,7 @@ public class IDLObjectProcessor {
 					Object subObject = createAndInitializeObject(elementType , (Map<String , Object>)tobj);
 					//data.add(subObject);
 					
+					// 如果采用protobuf协议，使用下面的函数，否则把该行注掉，使用标准的setter方法
 					setter4ProtoList(object , attrName , subObject , Class.forName(elementType));
 				}
 				
