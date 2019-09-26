@@ -17,6 +17,8 @@ public class IDLObjectProcessor {
 	 * @param clazz 类名字
 	 * @param attrTypeValueMap 属性，类型和值映射关系，key：name-java.lang.String value: "this is a test"
 	 * 							key: test-com.hs.test.Test value: 是Test类的属性，类型值的一个映射Map
+	 * 							如果key是List，格式为属性名-java.util.List-数组中元素类型，比如：
+	 * 							employee-java.util.List-com.hs.doc.gen.processor.Employee
 	 * @return 创建和初始化的目标对象
 	 * @throws Exception
 	 */
