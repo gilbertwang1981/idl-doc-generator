@@ -1,5 +1,6 @@
 package com.hs.doc.gen.processor;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,10 @@ public class IDLObjectProcessor {
 	 */
 	public Object createAndInitializeObject(String clazz , Map<String , Object> attrTypeValueMap) throws Exception {
 		Class<?> target = Class.forName(clazz);
-		Object object = target.newInstance();
+		Constructor<?> c0=  target.getDeclaredConstructor();   
+        c0.setAccessible(true);
+        
+		Object object = c0.newInstance();
 		
 		for (Map.Entry<String , Object> entry : attrTypeValueMap.entrySet()) {
 			StringTokenizer st = new StringTokenizer(entry.getKey() , "-");
@@ -69,12 +73,12 @@ public class IDLObjectProcessor {
 	}
 	
 	public Object getter(Object obj, String att) throws Exception{
-		Method met = obj.getClass().getMethod("get" + convertMethodName(att));
+		Method met = obj.getClass().getDeclaredMethod("get" + convertMethodName(att));
 		return met.invoke(obj);
 	}
 	
 	public void setter(Object obj, String att, Object value, Class<?> type) throws Exception {
-		Method met = obj.getClass().getMethod("set" + convertMethodName(att), type);
+		Method met = obj.getClass().getDeclaredMethod("set" + convertMethodName(att), type);
 		met.invoke(obj, value);
 	}
 }
