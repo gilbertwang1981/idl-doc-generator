@@ -2,7 +2,6 @@ package com.hs.doc.gen.processor;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
@@ -50,14 +49,16 @@ public class IDLObjectProcessor {
 				setter(object , attrName , entry.getValue() , Integer.class);
 			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_LIST_NAME)) {
 				String elementType = st.nextToken();
-				List<Object> data = new ArrayList<>();
+				//List<Object> data = new ArrayList<>();
 				for (Object tobj : (List<?>)entry.getValue()) {						
 					@SuppressWarnings("unchecked")
 					Object subObject = createAndInitializeObject(elementType , (Map<String , Object>)tobj);
-					data.add(subObject);
+					//data.add(subObject);
+					
+					setter4ProtoList(object , attrName , subObject , Class.forName(elementType));
 				}
 				
-				setter(object , attrName , data , List.class);
+				//setter(object , attrName , data , List.class);
 			} else {
 				@SuppressWarnings("unchecked")
 				Object subObject = createAndInitializeObject(typeName , (Map<String , Object>)entry.getValue());
@@ -79,6 +80,11 @@ public class IDLObjectProcessor {
 	
 	public void setter(Object obj, String att, Object value, Class<?> type) throws Exception {
 		Method met = obj.getClass().getDeclaredMethod("set" + convertMethodName(att), type);
+		met.invoke(obj, value);
+	}
+	
+	public void setter4ProtoList(Object obj, String att, Object value, Class<?> type) throws Exception {
+		Method met = obj.getClass().getDeclaredMethod("add" + convertMethodName(att) , type);
 		met.invoke(obj, value);
 	}
 }

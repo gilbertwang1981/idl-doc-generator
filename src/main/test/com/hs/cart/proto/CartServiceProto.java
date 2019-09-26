@@ -15,7 +15,7 @@ public final class CartServiceProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface Test0OrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.vip.cart.proto.Test0)
+      // @@protoc_insertion_point(interface_extends:com.hs.cart.proto.Test0)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -34,11 +34,11 @@ public final class CartServiceProto {
         getP1Bytes();
   }
   /**
-   * Protobuf type {@code com.vip.cart.proto.Test0}
+   * Protobuf type {@code com.hs.cart.proto.Test0}
    */
   public  static final class Test0 extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.vip.cart.proto.Test0)
+      // @@protoc_insertion_point(message_implements:com.hs.cart.proto.Test0)
       Test0OrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Test0.newBuilder() to construct.
@@ -106,13 +106,13 @@ public final class CartServiceProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_Test0_descriptor;
+      return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_Test0_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_Test0_fieldAccessorTable
+      return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_Test0_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.hs.cart.proto.CartServiceProto.Test0.class, com.hs.cart.proto.CartServiceProto.Test0.Builder.class);
     }
@@ -328,26 +328,26 @@ public final class CartServiceProto {
       return builder;
     }
     /**
-     * Protobuf type {@code com.vip.cart.proto.Test0}
+     * Protobuf type {@code com.hs.cart.proto.Test0}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.vip.cart.proto.Test0)
+        // @@protoc_insertion_point(builder_implements:com.hs.cart.proto.Test0)
         com.hs.cart.proto.CartServiceProto.Test0OrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_Test0_descriptor;
+        return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_Test0_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_Test0_fieldAccessorTable
+        return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_Test0_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.hs.cart.proto.CartServiceProto.Test0.class, com.hs.cart.proto.CartServiceProto.Test0.Builder.class);
       }
 
-      // Construct using com.vip.cart.proto.CartServiceProto.Test0.newBuilder()
+      // Construct using com.hs.cart.proto.CartServiceProto.Test0.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -375,7 +375,7 @@ public final class CartServiceProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_Test0_descriptor;
+        return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_Test0_descriptor;
       }
 
       @java.lang.Override
@@ -588,10 +588,10 @@ public final class CartServiceProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.vip.cart.proto.Test0)
+      // @@protoc_insertion_point(builder_scope:com.hs.cart.proto.Test0)
     }
 
-    // @@protoc_insertion_point(class_scope:com.vip.cart.proto.Test0)
+    // @@protoc_insertion_point(class_scope:com.hs.cart.proto.Test0)
     private static final com.hs.cart.proto.CartServiceProto.Test0 DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.hs.cart.proto.CartServiceProto.Test0();
@@ -629,7 +629,7 @@ public final class CartServiceProto {
   }
 
   public interface TestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.vip.cart.proto.Test)
+      // @@protoc_insertion_point(interface_extends:com.hs.cart.proto.Test)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -638,36 +638,48 @@ public final class CartServiceProto {
     long getIndex();
 
     /**
-     * <pre>
-     *repeated Test0 tests0 = 2;
-     * </pre>
-     *
-     * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+     * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
      */
     boolean hasTest0();
     /**
-     * <pre>
-     *repeated Test0 tests0 = 2;
-     * </pre>
-     *
-     * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+     * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
      */
     com.hs.cart.proto.CartServiceProto.Test0 getTest0();
     /**
-     * <pre>
-     *repeated Test0 tests0 = 2;
-     * </pre>
-     *
-     * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+     * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
      */
     com.hs.cart.proto.CartServiceProto.Test0OrBuilder getTest0OrBuilder();
+
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+     */
+    java.util.List<com.hs.cart.proto.CartServiceProto.Test0> 
+        getTests0List();
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+     */
+    com.hs.cart.proto.CartServiceProto.Test0 getTests0(int index);
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+     */
+    int getTests0Count();
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+     */
+    java.util.List<? extends com.hs.cart.proto.CartServiceProto.Test0OrBuilder> 
+        getTests0OrBuilderList();
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+     */
+    com.hs.cart.proto.CartServiceProto.Test0OrBuilder getTests0OrBuilder(
+        int index);
   }
   /**
-   * Protobuf type {@code com.vip.cart.proto.Test}
+   * Protobuf type {@code com.hs.cart.proto.Test}
    */
   public  static final class Test extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.vip.cart.proto.Test)
+      // @@protoc_insertion_point(message_implements:com.hs.cart.proto.Test)
       TestOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use Test.newBuilder() to construct.
@@ -676,6 +688,7 @@ public final class CartServiceProto {
     }
     private Test() {
       index_ = 0L;
+      tests0_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -720,6 +733,15 @@ public final class CartServiceProto {
 
               break;
             }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                tests0_ = new java.util.ArrayList<com.hs.cart.proto.CartServiceProto.Test0>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              tests0_.add(
+                  input.readMessage(com.hs.cart.proto.CartServiceProto.Test0.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -735,23 +757,27 @@ public final class CartServiceProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          tests0_ = java.util.Collections.unmodifiableList(tests0_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_Test_descriptor;
+      return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_Test_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_Test_fieldAccessorTable
+      return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_Test_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.hs.cart.proto.CartServiceProto.Test.class, com.hs.cart.proto.CartServiceProto.Test.Builder.class);
     }
 
+    private int bitField0_;
     public static final int INDEX_FIELD_NUMBER = 1;
     private long index_;
     /**
@@ -764,34 +790,57 @@ public final class CartServiceProto {
     public static final int TEST0_FIELD_NUMBER = 2;
     private com.hs.cart.proto.CartServiceProto.Test0 test0_;
     /**
-     * <pre>
-     *repeated Test0 tests0 = 2;
-     * </pre>
-     *
-     * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+     * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
      */
     public boolean hasTest0() {
       return test0_ != null;
     }
     /**
-     * <pre>
-     *repeated Test0 tests0 = 2;
-     * </pre>
-     *
-     * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+     * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
      */
     public com.hs.cart.proto.CartServiceProto.Test0 getTest0() {
       return test0_ == null ? com.hs.cart.proto.CartServiceProto.Test0.getDefaultInstance() : test0_;
     }
     /**
-     * <pre>
-     *repeated Test0 tests0 = 2;
-     * </pre>
-     *
-     * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+     * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
      */
     public com.hs.cart.proto.CartServiceProto.Test0OrBuilder getTest0OrBuilder() {
       return getTest0();
+    }
+
+    public static final int TESTS0_FIELD_NUMBER = 3;
+    private java.util.List<com.hs.cart.proto.CartServiceProto.Test0> tests0_;
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+     */
+    public java.util.List<com.hs.cart.proto.CartServiceProto.Test0> getTests0List() {
+      return tests0_;
+    }
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+     */
+    public java.util.List<? extends com.hs.cart.proto.CartServiceProto.Test0OrBuilder> 
+        getTests0OrBuilderList() {
+      return tests0_;
+    }
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+     */
+    public int getTests0Count() {
+      return tests0_.size();
+    }
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+     */
+    public com.hs.cart.proto.CartServiceProto.Test0 getTests0(int index) {
+      return tests0_.get(index);
+    }
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+     */
+    public com.hs.cart.proto.CartServiceProto.Test0OrBuilder getTests0OrBuilder(
+        int index) {
+      return tests0_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -814,6 +863,9 @@ public final class CartServiceProto {
       if (test0_ != null) {
         output.writeMessage(2, getTest0());
       }
+      for (int i = 0; i < tests0_.size(); i++) {
+        output.writeMessage(3, tests0_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -830,6 +882,10 @@ public final class CartServiceProto {
       if (test0_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getTest0());
+      }
+      for (int i = 0; i < tests0_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, tests0_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -854,6 +910,8 @@ public final class CartServiceProto {
         result = result && getTest0()
             .equals(other.getTest0());
       }
+      result = result && getTests0List()
+          .equals(other.getTests0List());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -871,6 +929,10 @@ public final class CartServiceProto {
       if (hasTest0()) {
         hash = (37 * hash) + TEST0_FIELD_NUMBER;
         hash = (53 * hash) + getTest0().hashCode();
+      }
+      if (getTests0Count() > 0) {
+        hash = (37 * hash) + TESTS0_FIELD_NUMBER;
+        hash = (53 * hash) + getTests0List().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -968,26 +1030,26 @@ public final class CartServiceProto {
       return builder;
     }
     /**
-     * Protobuf type {@code com.vip.cart.proto.Test}
+     * Protobuf type {@code com.hs.cart.proto.Test}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.vip.cart.proto.Test)
+        // @@protoc_insertion_point(builder_implements:com.hs.cart.proto.Test)
         com.hs.cart.proto.CartServiceProto.TestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_Test_descriptor;
+        return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_Test_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_Test_fieldAccessorTable
+        return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_Test_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.hs.cart.proto.CartServiceProto.Test.class, com.hs.cart.proto.CartServiceProto.Test.Builder.class);
       }
 
-      // Construct using com.vip.cart.proto.CartServiceProto.Test.newBuilder()
+      // Construct using com.hs.cart.proto.CartServiceProto.Test.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1000,6 +1062,7 @@ public final class CartServiceProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getTests0FieldBuilder();
         }
       }
       @java.lang.Override
@@ -1013,13 +1076,19 @@ public final class CartServiceProto {
           test0_ = null;
           test0Builder_ = null;
         }
+        if (tests0Builder_ == null) {
+          tests0_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          tests0Builder_.clear();
+        }
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_Test_descriptor;
+        return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_Test_descriptor;
       }
 
       @java.lang.Override
@@ -1039,12 +1108,24 @@ public final class CartServiceProto {
       @java.lang.Override
       public com.hs.cart.proto.CartServiceProto.Test buildPartial() {
         com.hs.cart.proto.CartServiceProto.Test result = new com.hs.cart.proto.CartServiceProto.Test(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.index_ = index_;
         if (test0Builder_ == null) {
           result.test0_ = test0_;
         } else {
           result.test0_ = test0Builder_.build();
         }
+        if (tests0Builder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            tests0_ = java.util.Collections.unmodifiableList(tests0_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.tests0_ = tests0_;
+        } else {
+          result.tests0_ = tests0Builder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1099,6 +1180,32 @@ public final class CartServiceProto {
         if (other.hasTest0()) {
           mergeTest0(other.getTest0());
         }
+        if (tests0Builder_ == null) {
+          if (!other.tests0_.isEmpty()) {
+            if (tests0_.isEmpty()) {
+              tests0_ = other.tests0_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureTests0IsMutable();
+              tests0_.addAll(other.tests0_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.tests0_.isEmpty()) {
+            if (tests0Builder_.isEmpty()) {
+              tests0Builder_.dispose();
+              tests0Builder_ = null;
+              tests0_ = other.tests0_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              tests0Builder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTests0FieldBuilder() : null;
+            } else {
+              tests0Builder_.addAllMessages(other.tests0_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1127,6 +1234,7 @@ public final class CartServiceProto {
         }
         return this;
       }
+      private int bitField0_;
 
       private long index_ ;
       /**
@@ -1158,21 +1266,13 @@ public final class CartServiceProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.hs.cart.proto.CartServiceProto.Test0, com.hs.cart.proto.CartServiceProto.Test0.Builder, com.hs.cart.proto.CartServiceProto.Test0OrBuilder> test0Builder_;
       /**
-       * <pre>
-       *repeated Test0 tests0 = 2;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+       * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
        */
       public boolean hasTest0() {
         return test0Builder_ != null || test0_ != null;
       }
       /**
-       * <pre>
-       *repeated Test0 tests0 = 2;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+       * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
        */
       public com.hs.cart.proto.CartServiceProto.Test0 getTest0() {
         if (test0Builder_ == null) {
@@ -1182,11 +1282,7 @@ public final class CartServiceProto {
         }
       }
       /**
-       * <pre>
-       *repeated Test0 tests0 = 2;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+       * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
        */
       public Builder setTest0(com.hs.cart.proto.CartServiceProto.Test0 value) {
         if (test0Builder_ == null) {
@@ -1202,11 +1298,7 @@ public final class CartServiceProto {
         return this;
       }
       /**
-       * <pre>
-       *repeated Test0 tests0 = 2;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+       * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
        */
       public Builder setTest0(
           com.hs.cart.proto.CartServiceProto.Test0.Builder builderForValue) {
@@ -1220,11 +1312,7 @@ public final class CartServiceProto {
         return this;
       }
       /**
-       * <pre>
-       *repeated Test0 tests0 = 2;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+       * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
        */
       public Builder mergeTest0(com.hs.cart.proto.CartServiceProto.Test0 value) {
         if (test0Builder_ == null) {
@@ -1242,11 +1330,7 @@ public final class CartServiceProto {
         return this;
       }
       /**
-       * <pre>
-       *repeated Test0 tests0 = 2;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+       * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
        */
       public Builder clearTest0() {
         if (test0Builder_ == null) {
@@ -1260,11 +1344,7 @@ public final class CartServiceProto {
         return this;
       }
       /**
-       * <pre>
-       *repeated Test0 tests0 = 2;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+       * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
        */
       public com.hs.cart.proto.CartServiceProto.Test0.Builder getTest0Builder() {
         
@@ -1272,11 +1352,7 @@ public final class CartServiceProto {
         return getTest0FieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       *repeated Test0 tests0 = 2;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+       * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
        */
       public com.hs.cart.proto.CartServiceProto.Test0OrBuilder getTest0OrBuilder() {
         if (test0Builder_ != null) {
@@ -1287,11 +1363,7 @@ public final class CartServiceProto {
         }
       }
       /**
-       * <pre>
-       *repeated Test0 tests0 = 2;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test0 test0 = 2;</code>
+       * <code>.com.hs.cart.proto.Test0 test0 = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.hs.cart.proto.CartServiceProto.Test0, com.hs.cart.proto.CartServiceProto.Test0.Builder, com.hs.cart.proto.CartServiceProto.Test0OrBuilder> 
@@ -1306,6 +1378,246 @@ public final class CartServiceProto {
         }
         return test0Builder_;
       }
+
+      private java.util.List<com.hs.cart.proto.CartServiceProto.Test0> tests0_ =
+        java.util.Collections.emptyList();
+      private void ensureTests0IsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          tests0_ = new java.util.ArrayList<com.hs.cart.proto.CartServiceProto.Test0>(tests0_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hs.cart.proto.CartServiceProto.Test0, com.hs.cart.proto.CartServiceProto.Test0.Builder, com.hs.cart.proto.CartServiceProto.Test0OrBuilder> tests0Builder_;
+
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public java.util.List<com.hs.cart.proto.CartServiceProto.Test0> getTests0List() {
+        if (tests0Builder_ == null) {
+          return java.util.Collections.unmodifiableList(tests0_);
+        } else {
+          return tests0Builder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public int getTests0Count() {
+        if (tests0Builder_ == null) {
+          return tests0_.size();
+        } else {
+          return tests0Builder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public com.hs.cart.proto.CartServiceProto.Test0 getTests0(int index) {
+        if (tests0Builder_ == null) {
+          return tests0_.get(index);
+        } else {
+          return tests0Builder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public Builder setTests0(
+          int index, com.hs.cart.proto.CartServiceProto.Test0 value) {
+        if (tests0Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTests0IsMutable();
+          tests0_.set(index, value);
+          onChanged();
+        } else {
+          tests0Builder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public Builder setTests0(
+          int index, com.hs.cart.proto.CartServiceProto.Test0.Builder builderForValue) {
+        if (tests0Builder_ == null) {
+          ensureTests0IsMutable();
+          tests0_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          tests0Builder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public Builder addTests0(com.hs.cart.proto.CartServiceProto.Test0 value) {
+        if (tests0Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTests0IsMutable();
+          tests0_.add(value);
+          onChanged();
+        } else {
+          tests0Builder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public Builder addTests0(
+          int index, com.hs.cart.proto.CartServiceProto.Test0 value) {
+        if (tests0Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTests0IsMutable();
+          tests0_.add(index, value);
+          onChanged();
+        } else {
+          tests0Builder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public Builder addTests0(
+          com.hs.cart.proto.CartServiceProto.Test0.Builder builderForValue) {
+        if (tests0Builder_ == null) {
+          ensureTests0IsMutable();
+          tests0_.add(builderForValue.build());
+          onChanged();
+        } else {
+          tests0Builder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public Builder addTests0(
+          int index, com.hs.cart.proto.CartServiceProto.Test0.Builder builderForValue) {
+        if (tests0Builder_ == null) {
+          ensureTests0IsMutable();
+          tests0_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          tests0Builder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public Builder addAllTests0(
+          java.lang.Iterable<? extends com.hs.cart.proto.CartServiceProto.Test0> values) {
+        if (tests0Builder_ == null) {
+          ensureTests0IsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, tests0_);
+          onChanged();
+        } else {
+          tests0Builder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public Builder clearTests0() {
+        if (tests0Builder_ == null) {
+          tests0_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          tests0Builder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public Builder removeTests0(int index) {
+        if (tests0Builder_ == null) {
+          ensureTests0IsMutable();
+          tests0_.remove(index);
+          onChanged();
+        } else {
+          tests0Builder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public com.hs.cart.proto.CartServiceProto.Test0.Builder getTests0Builder(
+          int index) {
+        return getTests0FieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public com.hs.cart.proto.CartServiceProto.Test0OrBuilder getTests0OrBuilder(
+          int index) {
+        if (tests0Builder_ == null) {
+          return tests0_.get(index);  } else {
+          return tests0Builder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public java.util.List<? extends com.hs.cart.proto.CartServiceProto.Test0OrBuilder> 
+           getTests0OrBuilderList() {
+        if (tests0Builder_ != null) {
+          return tests0Builder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(tests0_);
+        }
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public com.hs.cart.proto.CartServiceProto.Test0.Builder addTests0Builder() {
+        return getTests0FieldBuilder().addBuilder(
+            com.hs.cart.proto.CartServiceProto.Test0.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public com.hs.cart.proto.CartServiceProto.Test0.Builder addTests0Builder(
+          int index) {
+        return getTests0FieldBuilder().addBuilder(
+            index, com.hs.cart.proto.CartServiceProto.Test0.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 tests0 = 3;</code>
+       */
+      public java.util.List<com.hs.cart.proto.CartServiceProto.Test0.Builder> 
+           getTests0BuilderList() {
+        return getTests0FieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hs.cart.proto.CartServiceProto.Test0, com.hs.cart.proto.CartServiceProto.Test0.Builder, com.hs.cart.proto.CartServiceProto.Test0OrBuilder> 
+          getTests0FieldBuilder() {
+        if (tests0Builder_ == null) {
+          tests0Builder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.hs.cart.proto.CartServiceProto.Test0, com.hs.cart.proto.CartServiceProto.Test0.Builder, com.hs.cart.proto.CartServiceProto.Test0OrBuilder>(
+                  tests0_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          tests0_ = null;
+        }
+        return tests0Builder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1319,10 +1631,10 @@ public final class CartServiceProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.vip.cart.proto.Test)
+      // @@protoc_insertion_point(builder_scope:com.hs.cart.proto.Test)
     }
 
-    // @@protoc_insertion_point(class_scope:com.vip.cart.proto.Test)
+    // @@protoc_insertion_point(class_scope:com.hs.cart.proto.Test)
     private static final com.hs.cart.proto.CartServiceProto.Test DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.hs.cart.proto.CartServiceProto.Test();
@@ -1360,7 +1672,7 @@ public final class CartServiceProto {
   }
 
   public interface CartRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.vip.cart.proto.CartRequest)
+      // @@protoc_insertion_point(interface_extends:com.hs.cart.proto.CartRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1379,36 +1691,24 @@ public final class CartServiceProto {
         getDataBytes();
 
     /**
-     * <pre>
-     *repeated Test tests = 4;
-     * </pre>
-     *
-     * <code>.com.vip.cart.proto.Test test = 3;</code>
+     * <code>.com.hs.cart.proto.Test test = 3;</code>
      */
     boolean hasTest();
     /**
-     * <pre>
-     *repeated Test tests = 4;
-     * </pre>
-     *
-     * <code>.com.vip.cart.proto.Test test = 3;</code>
+     * <code>.com.hs.cart.proto.Test test = 3;</code>
      */
     com.hs.cart.proto.CartServiceProto.Test getTest();
     /**
-     * <pre>
-     *repeated Test tests = 4;
-     * </pre>
-     *
-     * <code>.com.vip.cart.proto.Test test = 3;</code>
+     * <code>.com.hs.cart.proto.Test test = 3;</code>
      */
     com.hs.cart.proto.CartServiceProto.TestOrBuilder getTestOrBuilder();
   }
   /**
-   * Protobuf type {@code com.vip.cart.proto.CartRequest}
+   * Protobuf type {@code com.hs.cart.proto.CartRequest}
    */
   public  static final class CartRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.vip.cart.proto.CartRequest)
+      // @@protoc_insertion_point(message_implements:com.hs.cart.proto.CartRequest)
       CartRequestOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use CartRequest.newBuilder() to construct.
@@ -1489,13 +1789,13 @@ public final class CartServiceProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_CartRequest_descriptor;
+      return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_CartRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_CartRequest_fieldAccessorTable
+      return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_CartRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.hs.cart.proto.CartServiceProto.CartRequest.class, com.hs.cart.proto.CartServiceProto.CartRequest.Builder.class);
     }
@@ -1546,31 +1846,19 @@ public final class CartServiceProto {
     public static final int TEST_FIELD_NUMBER = 3;
     private com.hs.cart.proto.CartServiceProto.Test test_;
     /**
-     * <pre>
-     *repeated Test tests = 4;
-     * </pre>
-     *
-     * <code>.com.vip.cart.proto.Test test = 3;</code>
+     * <code>.com.hs.cart.proto.Test test = 3;</code>
      */
     public boolean hasTest() {
       return test_ != null;
     }
     /**
-     * <pre>
-     *repeated Test tests = 4;
-     * </pre>
-     *
-     * <code>.com.vip.cart.proto.Test test = 3;</code>
+     * <code>.com.hs.cart.proto.Test test = 3;</code>
      */
     public com.hs.cart.proto.CartServiceProto.Test getTest() {
       return test_ == null ? com.hs.cart.proto.CartServiceProto.Test.getDefaultInstance() : test_;
     }
     /**
-     * <pre>
-     *repeated Test tests = 4;
-     * </pre>
-     *
-     * <code>.com.vip.cart.proto.Test test = 3;</code>
+     * <code>.com.hs.cart.proto.Test test = 3;</code>
      */
     public com.hs.cart.proto.CartServiceProto.TestOrBuilder getTestOrBuilder() {
       return getTest();
@@ -1760,26 +2048,26 @@ public final class CartServiceProto {
       return builder;
     }
     /**
-     * Protobuf type {@code com.vip.cart.proto.CartRequest}
+     * Protobuf type {@code com.hs.cart.proto.CartRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.vip.cart.proto.CartRequest)
+        // @@protoc_insertion_point(builder_implements:com.hs.cart.proto.CartRequest)
         com.hs.cart.proto.CartServiceProto.CartRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_CartRequest_descriptor;
+        return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_CartRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_CartRequest_fieldAccessorTable
+        return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_CartRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.hs.cart.proto.CartServiceProto.CartRequest.class, com.hs.cart.proto.CartServiceProto.CartRequest.Builder.class);
       }
 
-      // Construct using com.vip.cart.proto.CartServiceProto.CartRequest.newBuilder()
+      // Construct using com.hs.cart.proto.CartServiceProto.CartRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1813,7 +2101,7 @@ public final class CartServiceProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_CartRequest_descriptor;
+        return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_CartRequest_descriptor;
       }
 
       @java.lang.Override
@@ -2026,21 +2314,13 @@ public final class CartServiceProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.hs.cart.proto.CartServiceProto.Test, com.hs.cart.proto.CartServiceProto.Test.Builder, com.hs.cart.proto.CartServiceProto.TestOrBuilder> testBuilder_;
       /**
-       * <pre>
-       *repeated Test tests = 4;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test test = 3;</code>
+       * <code>.com.hs.cart.proto.Test test = 3;</code>
        */
       public boolean hasTest() {
         return testBuilder_ != null || test_ != null;
       }
       /**
-       * <pre>
-       *repeated Test tests = 4;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test test = 3;</code>
+       * <code>.com.hs.cart.proto.Test test = 3;</code>
        */
       public com.hs.cart.proto.CartServiceProto.Test getTest() {
         if (testBuilder_ == null) {
@@ -2050,11 +2330,7 @@ public final class CartServiceProto {
         }
       }
       /**
-       * <pre>
-       *repeated Test tests = 4;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test test = 3;</code>
+       * <code>.com.hs.cart.proto.Test test = 3;</code>
        */
       public Builder setTest(com.hs.cart.proto.CartServiceProto.Test value) {
         if (testBuilder_ == null) {
@@ -2070,11 +2346,7 @@ public final class CartServiceProto {
         return this;
       }
       /**
-       * <pre>
-       *repeated Test tests = 4;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test test = 3;</code>
+       * <code>.com.hs.cart.proto.Test test = 3;</code>
        */
       public Builder setTest(
           com.hs.cart.proto.CartServiceProto.Test.Builder builderForValue) {
@@ -2088,11 +2360,7 @@ public final class CartServiceProto {
         return this;
       }
       /**
-       * <pre>
-       *repeated Test tests = 4;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test test = 3;</code>
+       * <code>.com.hs.cart.proto.Test test = 3;</code>
        */
       public Builder mergeTest(com.hs.cart.proto.CartServiceProto.Test value) {
         if (testBuilder_ == null) {
@@ -2110,11 +2378,7 @@ public final class CartServiceProto {
         return this;
       }
       /**
-       * <pre>
-       *repeated Test tests = 4;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test test = 3;</code>
+       * <code>.com.hs.cart.proto.Test test = 3;</code>
        */
       public Builder clearTest() {
         if (testBuilder_ == null) {
@@ -2128,11 +2392,7 @@ public final class CartServiceProto {
         return this;
       }
       /**
-       * <pre>
-       *repeated Test tests = 4;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test test = 3;</code>
+       * <code>.com.hs.cart.proto.Test test = 3;</code>
        */
       public com.hs.cart.proto.CartServiceProto.Test.Builder getTestBuilder() {
         
@@ -2140,11 +2400,7 @@ public final class CartServiceProto {
         return getTestFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       *repeated Test tests = 4;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test test = 3;</code>
+       * <code>.com.hs.cart.proto.Test test = 3;</code>
        */
       public com.hs.cart.proto.CartServiceProto.TestOrBuilder getTestOrBuilder() {
         if (testBuilder_ != null) {
@@ -2155,11 +2411,7 @@ public final class CartServiceProto {
         }
       }
       /**
-       * <pre>
-       *repeated Test tests = 4;
-       * </pre>
-       *
-       * <code>.com.vip.cart.proto.Test test = 3;</code>
+       * <code>.com.hs.cart.proto.Test test = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.hs.cart.proto.CartServiceProto.Test, com.hs.cart.proto.CartServiceProto.Test.Builder, com.hs.cart.proto.CartServiceProto.TestOrBuilder> 
@@ -2187,10 +2439,10 @@ public final class CartServiceProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.vip.cart.proto.CartRequest)
+      // @@protoc_insertion_point(builder_scope:com.hs.cart.proto.CartRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:com.vip.cart.proto.CartRequest)
+    // @@protoc_insertion_point(class_scope:com.hs.cart.proto.CartRequest)
     private static final com.hs.cart.proto.CartServiceProto.CartRequest DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.hs.cart.proto.CartServiceProto.CartRequest();
@@ -2228,7 +2480,7 @@ public final class CartServiceProto {
   }
 
   public interface CartResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.vip.cart.proto.CartResponse)
+      // @@protoc_insertion_point(interface_extends:com.hs.cart.proto.CartResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2237,24 +2489,24 @@ public final class CartServiceProto {
     int getResult();
 
     /**
-     * <code>.com.vip.cart.proto.Test test = 2;</code>
+     * <code>.com.hs.cart.proto.Test test = 2;</code>
      */
     boolean hasTest();
     /**
-     * <code>.com.vip.cart.proto.Test test = 2;</code>
+     * <code>.com.hs.cart.proto.Test test = 2;</code>
      */
     com.hs.cart.proto.CartServiceProto.Test getTest();
     /**
-     * <code>.com.vip.cart.proto.Test test = 2;</code>
+     * <code>.com.hs.cart.proto.Test test = 2;</code>
      */
     com.hs.cart.proto.CartServiceProto.TestOrBuilder getTestOrBuilder();
   }
   /**
-   * Protobuf type {@code com.vip.cart.proto.CartResponse}
+   * Protobuf type {@code com.hs.cart.proto.CartResponse}
    */
   public  static final class CartResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.vip.cart.proto.CartResponse)
+      // @@protoc_insertion_point(message_implements:com.hs.cart.proto.CartResponse)
       CartResponseOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use CartResponse.newBuilder() to construct.
@@ -2328,13 +2580,13 @@ public final class CartServiceProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_CartResponse_descriptor;
+      return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_CartResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_CartResponse_fieldAccessorTable
+      return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_CartResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.hs.cart.proto.CartServiceProto.CartResponse.class, com.hs.cart.proto.CartServiceProto.CartResponse.Builder.class);
     }
@@ -2351,19 +2603,19 @@ public final class CartServiceProto {
     public static final int TEST_FIELD_NUMBER = 2;
     private com.hs.cart.proto.CartServiceProto.Test test_;
     /**
-     * <code>.com.vip.cart.proto.Test test = 2;</code>
+     * <code>.com.hs.cart.proto.Test test = 2;</code>
      */
     public boolean hasTest() {
       return test_ != null;
     }
     /**
-     * <code>.com.vip.cart.proto.Test test = 2;</code>
+     * <code>.com.hs.cart.proto.Test test = 2;</code>
      */
     public com.hs.cart.proto.CartServiceProto.Test getTest() {
       return test_ == null ? com.hs.cart.proto.CartServiceProto.Test.getDefaultInstance() : test_;
     }
     /**
-     * <code>.com.vip.cart.proto.Test test = 2;</code>
+     * <code>.com.hs.cart.proto.Test test = 2;</code>
      */
     public com.hs.cart.proto.CartServiceProto.TestOrBuilder getTestOrBuilder() {
       return getTest();
@@ -2542,26 +2794,26 @@ public final class CartServiceProto {
       return builder;
     }
     /**
-     * Protobuf type {@code com.vip.cart.proto.CartResponse}
+     * Protobuf type {@code com.hs.cart.proto.CartResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.vip.cart.proto.CartResponse)
+        // @@protoc_insertion_point(builder_implements:com.hs.cart.proto.CartResponse)
         com.hs.cart.proto.CartServiceProto.CartResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_CartResponse_descriptor;
+        return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_CartResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_CartResponse_fieldAccessorTable
+        return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_CartResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.hs.cart.proto.CartServiceProto.CartResponse.class, com.hs.cart.proto.CartServiceProto.CartResponse.Builder.class);
       }
 
-      // Construct using com.vip.cart.proto.CartServiceProto.CartResponse.newBuilder()
+      // Construct using com.hs.cart.proto.CartServiceProto.CartResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2593,7 +2845,7 @@ public final class CartServiceProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.hs.cart.proto.CartServiceProto.internal_static_com_vip_cart_proto_CartResponse_descriptor;
+        return com.hs.cart.proto.CartServiceProto.internal_static_com_hs_cart_proto_CartResponse_descriptor;
       }
 
       @java.lang.Override
@@ -2732,13 +2984,13 @@ public final class CartServiceProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.hs.cart.proto.CartServiceProto.Test, com.hs.cart.proto.CartServiceProto.Test.Builder, com.hs.cart.proto.CartServiceProto.TestOrBuilder> testBuilder_;
       /**
-       * <code>.com.vip.cart.proto.Test test = 2;</code>
+       * <code>.com.hs.cart.proto.Test test = 2;</code>
        */
       public boolean hasTest() {
         return testBuilder_ != null || test_ != null;
       }
       /**
-       * <code>.com.vip.cart.proto.Test test = 2;</code>
+       * <code>.com.hs.cart.proto.Test test = 2;</code>
        */
       public com.hs.cart.proto.CartServiceProto.Test getTest() {
         if (testBuilder_ == null) {
@@ -2748,7 +3000,7 @@ public final class CartServiceProto {
         }
       }
       /**
-       * <code>.com.vip.cart.proto.Test test = 2;</code>
+       * <code>.com.hs.cart.proto.Test test = 2;</code>
        */
       public Builder setTest(com.hs.cart.proto.CartServiceProto.Test value) {
         if (testBuilder_ == null) {
@@ -2764,7 +3016,7 @@ public final class CartServiceProto {
         return this;
       }
       /**
-       * <code>.com.vip.cart.proto.Test test = 2;</code>
+       * <code>.com.hs.cart.proto.Test test = 2;</code>
        */
       public Builder setTest(
           com.hs.cart.proto.CartServiceProto.Test.Builder builderForValue) {
@@ -2778,7 +3030,7 @@ public final class CartServiceProto {
         return this;
       }
       /**
-       * <code>.com.vip.cart.proto.Test test = 2;</code>
+       * <code>.com.hs.cart.proto.Test test = 2;</code>
        */
       public Builder mergeTest(com.hs.cart.proto.CartServiceProto.Test value) {
         if (testBuilder_ == null) {
@@ -2796,7 +3048,7 @@ public final class CartServiceProto {
         return this;
       }
       /**
-       * <code>.com.vip.cart.proto.Test test = 2;</code>
+       * <code>.com.hs.cart.proto.Test test = 2;</code>
        */
       public Builder clearTest() {
         if (testBuilder_ == null) {
@@ -2810,7 +3062,7 @@ public final class CartServiceProto {
         return this;
       }
       /**
-       * <code>.com.vip.cart.proto.Test test = 2;</code>
+       * <code>.com.hs.cart.proto.Test test = 2;</code>
        */
       public com.hs.cart.proto.CartServiceProto.Test.Builder getTestBuilder() {
         
@@ -2818,7 +3070,7 @@ public final class CartServiceProto {
         return getTestFieldBuilder().getBuilder();
       }
       /**
-       * <code>.com.vip.cart.proto.Test test = 2;</code>
+       * <code>.com.hs.cart.proto.Test test = 2;</code>
        */
       public com.hs.cart.proto.CartServiceProto.TestOrBuilder getTestOrBuilder() {
         if (testBuilder_ != null) {
@@ -2829,7 +3081,7 @@ public final class CartServiceProto {
         }
       }
       /**
-       * <code>.com.vip.cart.proto.Test test = 2;</code>
+       * <code>.com.hs.cart.proto.Test test = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.hs.cart.proto.CartServiceProto.Test, com.hs.cart.proto.CartServiceProto.Test.Builder, com.hs.cart.proto.CartServiceProto.TestOrBuilder> 
@@ -2857,10 +3109,10 @@ public final class CartServiceProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.vip.cart.proto.CartResponse)
+      // @@protoc_insertion_point(builder_scope:com.hs.cart.proto.CartResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:com.vip.cart.proto.CartResponse)
+    // @@protoc_insertion_point(class_scope:com.hs.cart.proto.CartResponse)
     private static final com.hs.cart.proto.CartServiceProto.CartResponse DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.hs.cart.proto.CartServiceProto.CartResponse();
@@ -2898,25 +3150,25 @@ public final class CartServiceProto {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_vip_cart_proto_Test0_descriptor;
+    internal_static_com_hs_cart_proto_Test0_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_vip_cart_proto_Test0_fieldAccessorTable;
+      internal_static_com_hs_cart_proto_Test0_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_vip_cart_proto_Test_descriptor;
+    internal_static_com_hs_cart_proto_Test_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_vip_cart_proto_Test_fieldAccessorTable;
+      internal_static_com_hs_cart_proto_Test_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_vip_cart_proto_CartRequest_descriptor;
+    internal_static_com_hs_cart_proto_CartRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_vip_cart_proto_CartRequest_fieldAccessorTable;
+      internal_static_com_hs_cart_proto_CartRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_vip_cart_proto_CartResponse_descriptor;
+    internal_static_com_hs_cart_proto_CartResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_vip_cart_proto_CartResponse_fieldAccessorTable;
+      internal_static_com_hs_cart_proto_CartResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2927,14 +3179,15 @@ public final class CartServiceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)src/main/resources/CartServiceProto.pr" +
-      "oto\022\022com.vip.cart.proto\"\037\n\005Test0\022\n\n\002p0\030\001" +
-      " \001(\003\022\n\n\002p1\030\002 \001(\t\"?\n\004Test\022\r\n\005index\030\001 \001(\003\022" +
-      "(\n\005test0\030\002 \001(\0132\031.com.vip.cart.proto.Test" +
-      "0\"S\n\013CartRequest\022\016\n\006userId\030\001 \001(\003\022\014\n\004data" +
-      "\030\002 \001(\t\022&\n\004test\030\003 \001(\0132\030.com.vip.cart.prot" +
-      "o.Test\"F\n\014CartResponse\022\016\n\006result\030\001 \001(\005\022&" +
-      "\n\004test\030\002 \001(\0132\030.com.vip.cart.proto.Testb\006" +
-      "proto3"
+      "oto\022\021com.hs.cart.proto\"\037\n\005Test0\022\n\n\002p0\030\001 " +
+      "\001(\003\022\n\n\002p1\030\002 \001(\t\"h\n\004Test\022\r\n\005index\030\001 \001(\003\022\'" +
+      "\n\005test0\030\002 \001(\0132\030.com.hs.cart.proto.Test0\022" +
+      "(\n\006tests0\030\003 \003(\0132\030.com.hs.cart.proto.Test" +
+      "0\"R\n\013CartRequest\022\016\n\006userId\030\001 \001(\003\022\014\n\004data" +
+      "\030\002 \001(\t\022%\n\004test\030\003 \001(\0132\027.com.hs.cart.proto" +
+      ".Test\"E\n\014CartResponse\022\016\n\006result\030\001 \001(\005\022%\n" +
+      "\004test\030\002 \001(\0132\027.com.hs.cart.proto.Testb\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2948,29 +3201,29 @@ public final class CartServiceProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_com_vip_cart_proto_Test0_descriptor =
+    internal_static_com_hs_cart_proto_Test0_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_com_vip_cart_proto_Test0_fieldAccessorTable = new
+    internal_static_com_hs_cart_proto_Test0_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_vip_cart_proto_Test0_descriptor,
+        internal_static_com_hs_cart_proto_Test0_descriptor,
         new java.lang.String[] { "P0", "P1", });
-    internal_static_com_vip_cart_proto_Test_descriptor =
+    internal_static_com_hs_cart_proto_Test_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_com_vip_cart_proto_Test_fieldAccessorTable = new
+    internal_static_com_hs_cart_proto_Test_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_vip_cart_proto_Test_descriptor,
-        new java.lang.String[] { "Index", "Test0", });
-    internal_static_com_vip_cart_proto_CartRequest_descriptor =
+        internal_static_com_hs_cart_proto_Test_descriptor,
+        new java.lang.String[] { "Index", "Test0", "Tests0", });
+    internal_static_com_hs_cart_proto_CartRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_com_vip_cart_proto_CartRequest_fieldAccessorTable = new
+    internal_static_com_hs_cart_proto_CartRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_vip_cart_proto_CartRequest_descriptor,
+        internal_static_com_hs_cart_proto_CartRequest_descriptor,
         new java.lang.String[] { "UserId", "Data", "Test", });
-    internal_static_com_vip_cart_proto_CartResponse_descriptor =
+    internal_static_com_hs_cart_proto_CartResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_com_vip_cart_proto_CartResponse_fieldAccessorTable = new
+    internal_static_com_hs_cart_proto_CartResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_vip_cart_proto_CartResponse_descriptor,
+        internal_static_com_hs_cart_proto_CartResponse_descriptor,
         new java.lang.String[] { "Result", "Test", });
   }
 
