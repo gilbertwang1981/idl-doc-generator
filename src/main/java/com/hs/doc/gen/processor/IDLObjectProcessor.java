@@ -46,9 +46,15 @@ public class IDLObjectProcessor {
 			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_CINT_NAME)) {
 				setter(object , attrName , entry.getValue() , Integer.class);
 			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_LIST_NAME)) {
-				for (Object tobj : (List<?>)entry.getValue()) {
-					System.out.println("列表中的元素:" + tobj);
+				String elementType = st.nextToken();
+				List<Object> data = new ArrayList<>();
+				for (Object tobj : (List<?>)entry.getValue()) {						
+					@SuppressWarnings("unchecked")
+					Object subObject = createAndInitializeObject(elementType , (Map<String , Object>)tobj);
+					data.add(subObject);
 				}
+				
+				setter(object , attrName , data , List.class);
 			} else {
 				@SuppressWarnings("unchecked")
 				Object subObject = createAndInitializeObject(typeName , (Map<String , Object>)entry.getValue());
@@ -95,7 +101,7 @@ public class IDLObjectProcessor {
 			
 			multi.add(attr);
 		}
-		attrMap.put("employee-java.util.List" , multi);
+		attrMap.put("employee-java.util.List-com.hs.doc.gen.processor.Employee" , multi);
 		
 		IDLObjectProcessor processor = new IDLObjectProcessor();
 		Object object = processor.createAndInitializeObject("com.hs.doc.gen.processor.Company", attrMap);
