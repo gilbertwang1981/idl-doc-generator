@@ -8,7 +8,7 @@ import java.util.Map;
 import com.google.gson.Gson;
 import com.hs.doc.gen.processor.IDLObjectProcessor;
 
-public class IDLObjectProcessorTest {
+public class IDLObjectProcessorTest0 {
 	public static void main(String [] args) throws Exception {
 		Map<String , Object> attrMap = new HashMap<>();
 		attrMap.put("companyCode-java.lang.String", "001");
