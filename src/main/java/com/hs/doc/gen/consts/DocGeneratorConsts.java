@@ -18,4 +18,5 @@ public interface DocGeneratorConsts {
 	public static final String DOC_LABEL_CINT_NAME = "java.lang.Integer";
 	public static final String DOC_LABEL_CLONG_NAME = "java.lang.Long";
 	public static final String DOC_LABEL_CDOUBLE_NAME = "java.lang.Double";
+	public static final String DOC_LABEL_ENUM_NAME = "enum";
 }

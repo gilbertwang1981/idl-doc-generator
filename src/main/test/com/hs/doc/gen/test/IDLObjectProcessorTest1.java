@@ -37,7 +37,9 @@ public class IDLObjectProcessorTest1 {
 		attrMap.put("test-com.hs.cart.proto.CartServiceProto$Test$Builder" , testMap);
 		
 		attrMap.put("ts0-java.util.List-com.hs.cart.proto.CartServiceProto$Test0$Builder" , test0List);
-
+		
+		attrMap.put("et-enum-com.hs.cart.proto.CartServiceProto$CartRequest$Builder" , 0);
+		
 		IDLObjectProcessor processor = new IDLObjectProcessor();
 		Object object = processor.createAndInitializeObject("com.hs.cart.proto.CartServiceProto$CartRequest$Builder", attrMap);
 		
@@ -48,7 +50,8 @@ public class IDLObjectProcessorTest1 {
 		
 		// 反序列化验证
 		CartRequest verify = CartRequest.parseFrom(data);
-		System.out.println(verify.getUserId() + " " + verify.getData() + " " + verify.getTest().getIndex());
+		System.out.println(verify.getUserId() + " " + verify.getData() + " " + 
+				verify.getTest().getIndex() + " " + verify.getEtValue());
 		List<Test0> tests0 = verify.getTest().getTests0List();
 		for (Test0 test0 : tests0) {
 			System.out.println(test0.getP0() + " " + test0.getP1());

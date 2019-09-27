@@ -47,19 +47,15 @@ public class IDLObjectProcessor {
 				setter(object , attrName , entry.getValue() , int.class);
 			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_CINT_NAME)) {
 				setter(object , attrName , entry.getValue() , Integer.class);
+			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_ENUM_NAME)) {
+				setter4ProtoEnum(object , attrName , entry.getValue());
 			} else if (typeName.equals(DocGeneratorConsts.DOC_LABEL_LIST_NAME)) {
 				String elementType = st.nextToken();
-				//List<Object> data = new ArrayList<>();
 				for (Object tobj : (List<?>)entry.getValue()) {						
 					@SuppressWarnings("unchecked")
 					Object subObject = createAndInitializeObject(elementType , (Map<String , Object>)tobj);
-					//data.add(subObject);
-					
-					// 如果采用protobuf协议，使用下面的函数，否则把该行注掉，使用标准的setter方法
 					setter4ProtoList(object , attrName , subObject , Class.forName(elementType));
 				}
-				
-				//setter(object , attrName , data , List.class);
 			} else {
 				@SuppressWarnings("unchecked")
 				Object subObject = createAndInitializeObject(typeName , (Map<String , Object>)entry.getValue());
@@ -86,6 +82,11 @@ public class IDLObjectProcessor {
 	
 	public void setter4ProtoList(Object obj, String att, Object value, Class<?> type) throws Exception {
 		Method met = obj.getClass().getDeclaredMethod("add" + convertMethodName(att) , type);
+		met.invoke(obj, value);
+	}
+	
+	public void setter4ProtoEnum(Object obj, String att, Object value) throws Exception {
+		Method met = obj.getClass().getDeclaredMethod("set" + convertMethodName(att) + "Value" , int.class);
 		met.invoke(obj, value);
 	}
 }

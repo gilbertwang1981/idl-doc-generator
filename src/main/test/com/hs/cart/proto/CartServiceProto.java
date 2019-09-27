@@ -14,6 +14,104 @@ public final class CartServiceProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code com.hs.cart.proto.ET}
+   */
+  public enum ET
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>T0 = 0;</code>
+     */
+    T0(0),
+    /**
+     * <code>T1 = 1;</code>
+     */
+    T1(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>T0 = 0;</code>
+     */
+    public static final int T0_VALUE = 0;
+    /**
+     * <code>T1 = 1;</code>
+     */
+    public static final int T1_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ET valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ET forNumber(int value) {
+      switch (value) {
+        case 0: return T0;
+        case 1: return T1;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ET>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ET> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ET>() {
+            public ET findValueByNumber(int number) {
+              return ET.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.hs.cart.proto.CartServiceProto.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ET[] VALUES = values();
+
+    public static ET valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ET(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:com.hs.cart.proto.ET)
+  }
+
   public interface Test0OrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.hs.cart.proto.Test0)
       com.google.protobuf.MessageOrBuilder {
@@ -1726,6 +1824,15 @@ public final class CartServiceProto {
      */
     com.hs.cart.proto.CartServiceProto.Test0OrBuilder getTs0OrBuilder(
         int index);
+
+    /**
+     * <code>.com.hs.cart.proto.ET et = 5;</code>
+     */
+    int getEtValue();
+    /**
+     * <code>.com.hs.cart.proto.ET et = 5;</code>
+     */
+    com.hs.cart.proto.CartServiceProto.ET getEt();
   }
   /**
    * Protobuf type {@code com.hs.cart.proto.CartRequest}
@@ -1743,6 +1850,7 @@ public final class CartServiceProto {
       userId_ = 0L;
       data_ = "";
       ts0_ = java.util.Collections.emptyList();
+      et_ = 0;
     }
 
     @java.lang.Override
@@ -1800,6 +1908,12 @@ public final class CartServiceProto {
               }
               ts0_.add(
                   input.readMessage(com.hs.cart.proto.CartServiceProto.Test0.parser(), extensionRegistry));
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              et_ = rawValue;
               break;
             }
             default: {
@@ -1937,6 +2051,23 @@ public final class CartServiceProto {
       return ts0_.get(index);
     }
 
+    public static final int ET_FIELD_NUMBER = 5;
+    private int et_;
+    /**
+     * <code>.com.hs.cart.proto.ET et = 5;</code>
+     */
+    public int getEtValue() {
+      return et_;
+    }
+    /**
+     * <code>.com.hs.cart.proto.ET et = 5;</code>
+     */
+    public com.hs.cart.proto.CartServiceProto.ET getEt() {
+      @SuppressWarnings("deprecation")
+      com.hs.cart.proto.CartServiceProto.ET result = com.hs.cart.proto.CartServiceProto.ET.valueOf(et_);
+      return result == null ? com.hs.cart.proto.CartServiceProto.ET.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1963,6 +2094,9 @@ public final class CartServiceProto {
       for (int i = 0; i < ts0_.size(); i++) {
         output.writeMessage(4, ts0_.get(i));
       }
+      if (et_ != com.hs.cart.proto.CartServiceProto.ET.T0.getNumber()) {
+        output.writeEnum(5, et_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1986,6 +2120,10 @@ public final class CartServiceProto {
       for (int i = 0; i < ts0_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, ts0_.get(i));
+      }
+      if (et_ != com.hs.cart.proto.CartServiceProto.ET.T0.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, et_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2014,6 +2152,7 @@ public final class CartServiceProto {
       }
       result = result && getTs0List()
           .equals(other.getTs0List());
+      result = result && et_ == other.et_;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2038,6 +2177,8 @@ public final class CartServiceProto {
         hash = (37 * hash) + TS0_FIELD_NUMBER;
         hash = (53 * hash) + getTs0List().hashCode();
       }
+      hash = (37 * hash) + ET_FIELD_NUMBER;
+      hash = (53 * hash) + et_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2188,6 +2329,8 @@ public final class CartServiceProto {
         } else {
           ts0Builder_.clear();
         }
+        et_ = 0;
+
         return this;
       }
 
@@ -2232,6 +2375,7 @@ public final class CartServiceProto {
         } else {
           result.ts0_ = ts0Builder_.build();
         }
+        result.et_ = et_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2316,6 +2460,9 @@ public final class CartServiceProto {
               ts0Builder_.addAllMessages(other.ts0_);
             }
           }
+        }
+        if (other.et_ != 0) {
+          setEtValue(other.getEtValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2797,6 +2944,51 @@ public final class CartServiceProto {
           ts0_ = null;
         }
         return ts0Builder_;
+      }
+
+      private int et_ = 0;
+      /**
+       * <code>.com.hs.cart.proto.ET et = 5;</code>
+       */
+      public int getEtValue() {
+        return et_;
+      }
+      /**
+       * <code>.com.hs.cart.proto.ET et = 5;</code>
+       */
+      public Builder setEtValue(int value) {
+        et_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.hs.cart.proto.ET et = 5;</code>
+       */
+      public com.hs.cart.proto.CartServiceProto.ET getEt() {
+        @SuppressWarnings("deprecation")
+        com.hs.cart.proto.CartServiceProto.ET result = com.hs.cart.proto.CartServiceProto.ET.valueOf(et_);
+        return result == null ? com.hs.cart.proto.CartServiceProto.ET.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.com.hs.cart.proto.ET et = 5;</code>
+       */
+      public Builder setEt(com.hs.cart.proto.CartServiceProto.ET value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        et_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.com.hs.cart.proto.ET et = 5;</code>
+       */
+      public Builder clearEt() {
+        
+        et_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3551,16 +3743,18 @@ public final class CartServiceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)src/main/resources/CartServiceProto.pr" +
-      "oto\022\021com.hs.cart.proto\"\037\n\005Test0\022\n\n\002p0\030\001 " +
-      "\001(\003\022\n\n\002p1\030\002 \001(\t\"h\n\004Test\022\r\n\005index\030\001 \001(\003\022\'" +
-      "\n\005test0\030\002 \001(\0132\030.com.hs.cart.proto.Test0\022" +
-      "(\n\006tests0\030\003 \003(\0132\030.com.hs.cart.proto.Test" +
-      "0\"y\n\013CartRequest\022\016\n\006userId\030\001 \001(\003\022\014\n\004data" +
-      "\030\002 \001(\t\022%\n\004test\030\003 \001(\0132\027.com.hs.cart.proto" +
-      ".Test\022%\n\003ts0\030\004 \003(\0132\030.com.hs.cart.proto.T" +
-      "est0\"E\n\014CartResponse\022\016\n\006result\030\001 \001(\005\022%\n\004" +
-      "test\030\002 \001(\0132\027.com.hs.cart.proto.Testb\006pro" +
-      "to3"
+      "oto\022\021com.hs.cart.proto\032\037google/protobuf/" +
+      "timestamp.proto\"\037\n\005Test0\022\n\n\002p0\030\001 \001(\003\022\n\n\002" +
+      "p1\030\002 \001(\t\"h\n\004Test\022\r\n\005index\030\001 \001(\003\022\'\n\005test0" +
+      "\030\002 \001(\0132\030.com.hs.cart.proto.Test0\022(\n\006test" +
+      "s0\030\003 \003(\0132\030.com.hs.cart.proto.Test0\"\234\001\n\013C" +
+      "artRequest\022\016\n\006userId\030\001 \001(\003\022\014\n\004data\030\002 \001(\t" +
+      "\022%\n\004test\030\003 \001(\0132\027.com.hs.cart.proto.Test\022" +
+      "%\n\003ts0\030\004 \003(\0132\030.com.hs.cart.proto.Test0\022!" +
+      "\n\002et\030\005 \001(\0162\025.com.hs.cart.proto.ET\"E\n\014Car" +
+      "tResponse\022\016\n\006result\030\001 \001(\005\022%\n\004test\030\002 \001(\0132" +
+      "\027.com.hs.cart.proto.Test*\024\n\002ET\022\006\n\002T0\020\000\022\006" +
+      "\n\002T1\020\001P\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3573,6 +3767,7 @@ public final class CartServiceProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
     internal_static_com_hs_cart_proto_Test0_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3591,13 +3786,14 @@ public final class CartServiceProto {
     internal_static_com_hs_cart_proto_CartRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_hs_cart_proto_CartRequest_descriptor,
-        new java.lang.String[] { "UserId", "Data", "Test", "Ts0", });
+        new java.lang.String[] { "UserId", "Data", "Test", "Ts0", "Et", });
     internal_static_com_hs_cart_proto_CartResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_hs_cart_proto_CartResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_hs_cart_proto_CartResponse_descriptor,
         new java.lang.String[] { "Result", "Test", });
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

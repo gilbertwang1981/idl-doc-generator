@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+import public "google/protobuf/timestamp.proto";
+
+package com.hs.cart.proto;
+
+message Test0 {
+	int64 p0 = 1;
+	string p1 = 2;
+}
+
+message Test {
+	int64 index = 1;
+	Test0 test0 = 2;
+	repeated Test0 tests0 = 3;
+}
+
+enum ET {
+	T0 = 0;
+	T1 = 1;
+};
+
+message CartRequest {
+	int64 userId = 1;
+	string data = 2;
+	Test test = 3;
+	repeated Test0 ts0 = 4;
+	ET et = 5;
+}
+
+message CartResponse {
+	int32 result = 1;
+	Test test = 2;
+}
