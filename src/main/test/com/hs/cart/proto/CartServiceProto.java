@@ -1702,6 +1702,30 @@ public final class CartServiceProto {
      * <code>.com.hs.cart.proto.Test test = 3;</code>
      */
     com.hs.cart.proto.CartServiceProto.TestOrBuilder getTestOrBuilder();
+
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+     */
+    java.util.List<com.hs.cart.proto.CartServiceProto.Test0> 
+        getTs0List();
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+     */
+    com.hs.cart.proto.CartServiceProto.Test0 getTs0(int index);
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+     */
+    int getTs0Count();
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+     */
+    java.util.List<? extends com.hs.cart.proto.CartServiceProto.Test0OrBuilder> 
+        getTs0OrBuilderList();
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+     */
+    com.hs.cart.proto.CartServiceProto.Test0OrBuilder getTs0OrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code com.hs.cart.proto.CartRequest}
@@ -1718,6 +1742,7 @@ public final class CartServiceProto {
     private CartRequest() {
       userId_ = 0L;
       data_ = "";
+      ts0_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1768,6 +1793,15 @@ public final class CartServiceProto {
 
               break;
             }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                ts0_ = new java.util.ArrayList<com.hs.cart.proto.CartServiceProto.Test0>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              ts0_.add(
+                  input.readMessage(com.hs.cart.proto.CartServiceProto.Test0.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1783,6 +1817,9 @@ public final class CartServiceProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          ts0_ = java.util.Collections.unmodifiableList(ts0_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -1800,6 +1837,7 @@ public final class CartServiceProto {
               com.hs.cart.proto.CartServiceProto.CartRequest.class, com.hs.cart.proto.CartServiceProto.CartRequest.Builder.class);
     }
 
+    private int bitField0_;
     public static final int USERID_FIELD_NUMBER = 1;
     private long userId_;
     /**
@@ -1864,6 +1902,41 @@ public final class CartServiceProto {
       return getTest();
     }
 
+    public static final int TS0_FIELD_NUMBER = 4;
+    private java.util.List<com.hs.cart.proto.CartServiceProto.Test0> ts0_;
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+     */
+    public java.util.List<com.hs.cart.proto.CartServiceProto.Test0> getTs0List() {
+      return ts0_;
+    }
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+     */
+    public java.util.List<? extends com.hs.cart.proto.CartServiceProto.Test0OrBuilder> 
+        getTs0OrBuilderList() {
+      return ts0_;
+    }
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+     */
+    public int getTs0Count() {
+      return ts0_.size();
+    }
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+     */
+    public com.hs.cart.proto.CartServiceProto.Test0 getTs0(int index) {
+      return ts0_.get(index);
+    }
+    /**
+     * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+     */
+    public com.hs.cart.proto.CartServiceProto.Test0OrBuilder getTs0OrBuilder(
+        int index) {
+      return ts0_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1887,6 +1960,9 @@ public final class CartServiceProto {
       if (test_ != null) {
         output.writeMessage(3, getTest());
       }
+      for (int i = 0; i < ts0_.size(); i++) {
+        output.writeMessage(4, ts0_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1906,6 +1982,10 @@ public final class CartServiceProto {
       if (test_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getTest());
+      }
+      for (int i = 0; i < ts0_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, ts0_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1932,6 +2012,8 @@ public final class CartServiceProto {
         result = result && getTest()
             .equals(other.getTest());
       }
+      result = result && getTs0List()
+          .equals(other.getTs0List());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1951,6 +2033,10 @@ public final class CartServiceProto {
       if (hasTest()) {
         hash = (37 * hash) + TEST_FIELD_NUMBER;
         hash = (53 * hash) + getTest().hashCode();
+      }
+      if (getTs0Count() > 0) {
+        hash = (37 * hash) + TS0_FIELD_NUMBER;
+        hash = (53 * hash) + getTs0List().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2080,6 +2166,7 @@ public final class CartServiceProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getTs0FieldBuilder();
         }
       }
       @java.lang.Override
@@ -2094,6 +2181,12 @@ public final class CartServiceProto {
         } else {
           test_ = null;
           testBuilder_ = null;
+        }
+        if (ts0Builder_ == null) {
+          ts0_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ts0Builder_.clear();
         }
         return this;
       }
@@ -2121,6 +2214,8 @@ public final class CartServiceProto {
       @java.lang.Override
       public com.hs.cart.proto.CartServiceProto.CartRequest buildPartial() {
         com.hs.cart.proto.CartServiceProto.CartRequest result = new com.hs.cart.proto.CartServiceProto.CartRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.userId_ = userId_;
         result.data_ = data_;
         if (testBuilder_ == null) {
@@ -2128,6 +2223,16 @@ public final class CartServiceProto {
         } else {
           result.test_ = testBuilder_.build();
         }
+        if (ts0Builder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            ts0_ = java.util.Collections.unmodifiableList(ts0_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.ts0_ = ts0_;
+        } else {
+          result.ts0_ = ts0Builder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2186,6 +2291,32 @@ public final class CartServiceProto {
         if (other.hasTest()) {
           mergeTest(other.getTest());
         }
+        if (ts0Builder_ == null) {
+          if (!other.ts0_.isEmpty()) {
+            if (ts0_.isEmpty()) {
+              ts0_ = other.ts0_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureTs0IsMutable();
+              ts0_.addAll(other.ts0_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.ts0_.isEmpty()) {
+            if (ts0Builder_.isEmpty()) {
+              ts0Builder_.dispose();
+              ts0Builder_ = null;
+              ts0_ = other.ts0_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              ts0Builder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTs0FieldBuilder() : null;
+            } else {
+              ts0Builder_.addAllMessages(other.ts0_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2214,6 +2345,7 @@ public final class CartServiceProto {
         }
         return this;
       }
+      private int bitField0_;
 
       private long userId_ ;
       /**
@@ -2425,6 +2557,246 @@ public final class CartServiceProto {
           test_ = null;
         }
         return testBuilder_;
+      }
+
+      private java.util.List<com.hs.cart.proto.CartServiceProto.Test0> ts0_ =
+        java.util.Collections.emptyList();
+      private void ensureTs0IsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          ts0_ = new java.util.ArrayList<com.hs.cart.proto.CartServiceProto.Test0>(ts0_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hs.cart.proto.CartServiceProto.Test0, com.hs.cart.proto.CartServiceProto.Test0.Builder, com.hs.cart.proto.CartServiceProto.Test0OrBuilder> ts0Builder_;
+
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public java.util.List<com.hs.cart.proto.CartServiceProto.Test0> getTs0List() {
+        if (ts0Builder_ == null) {
+          return java.util.Collections.unmodifiableList(ts0_);
+        } else {
+          return ts0Builder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public int getTs0Count() {
+        if (ts0Builder_ == null) {
+          return ts0_.size();
+        } else {
+          return ts0Builder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public com.hs.cart.proto.CartServiceProto.Test0 getTs0(int index) {
+        if (ts0Builder_ == null) {
+          return ts0_.get(index);
+        } else {
+          return ts0Builder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public Builder setTs0(
+          int index, com.hs.cart.proto.CartServiceProto.Test0 value) {
+        if (ts0Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTs0IsMutable();
+          ts0_.set(index, value);
+          onChanged();
+        } else {
+          ts0Builder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public Builder setTs0(
+          int index, com.hs.cart.proto.CartServiceProto.Test0.Builder builderForValue) {
+        if (ts0Builder_ == null) {
+          ensureTs0IsMutable();
+          ts0_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          ts0Builder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public Builder addTs0(com.hs.cart.proto.CartServiceProto.Test0 value) {
+        if (ts0Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTs0IsMutable();
+          ts0_.add(value);
+          onChanged();
+        } else {
+          ts0Builder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public Builder addTs0(
+          int index, com.hs.cart.proto.CartServiceProto.Test0 value) {
+        if (ts0Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTs0IsMutable();
+          ts0_.add(index, value);
+          onChanged();
+        } else {
+          ts0Builder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public Builder addTs0(
+          com.hs.cart.proto.CartServiceProto.Test0.Builder builderForValue) {
+        if (ts0Builder_ == null) {
+          ensureTs0IsMutable();
+          ts0_.add(builderForValue.build());
+          onChanged();
+        } else {
+          ts0Builder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public Builder addTs0(
+          int index, com.hs.cart.proto.CartServiceProto.Test0.Builder builderForValue) {
+        if (ts0Builder_ == null) {
+          ensureTs0IsMutable();
+          ts0_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          ts0Builder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public Builder addAllTs0(
+          java.lang.Iterable<? extends com.hs.cart.proto.CartServiceProto.Test0> values) {
+        if (ts0Builder_ == null) {
+          ensureTs0IsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, ts0_);
+          onChanged();
+        } else {
+          ts0Builder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public Builder clearTs0() {
+        if (ts0Builder_ == null) {
+          ts0_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          ts0Builder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public Builder removeTs0(int index) {
+        if (ts0Builder_ == null) {
+          ensureTs0IsMutable();
+          ts0_.remove(index);
+          onChanged();
+        } else {
+          ts0Builder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public com.hs.cart.proto.CartServiceProto.Test0.Builder getTs0Builder(
+          int index) {
+        return getTs0FieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public com.hs.cart.proto.CartServiceProto.Test0OrBuilder getTs0OrBuilder(
+          int index) {
+        if (ts0Builder_ == null) {
+          return ts0_.get(index);  } else {
+          return ts0Builder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public java.util.List<? extends com.hs.cart.proto.CartServiceProto.Test0OrBuilder> 
+           getTs0OrBuilderList() {
+        if (ts0Builder_ != null) {
+          return ts0Builder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(ts0_);
+        }
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public com.hs.cart.proto.CartServiceProto.Test0.Builder addTs0Builder() {
+        return getTs0FieldBuilder().addBuilder(
+            com.hs.cart.proto.CartServiceProto.Test0.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public com.hs.cart.proto.CartServiceProto.Test0.Builder addTs0Builder(
+          int index) {
+        return getTs0FieldBuilder().addBuilder(
+            index, com.hs.cart.proto.CartServiceProto.Test0.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.hs.cart.proto.Test0 ts0 = 4;</code>
+       */
+      public java.util.List<com.hs.cart.proto.CartServiceProto.Test0.Builder> 
+           getTs0BuilderList() {
+        return getTs0FieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hs.cart.proto.CartServiceProto.Test0, com.hs.cart.proto.CartServiceProto.Test0.Builder, com.hs.cart.proto.CartServiceProto.Test0OrBuilder> 
+          getTs0FieldBuilder() {
+        if (ts0Builder_ == null) {
+          ts0Builder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.hs.cart.proto.CartServiceProto.Test0, com.hs.cart.proto.CartServiceProto.Test0.Builder, com.hs.cart.proto.CartServiceProto.Test0OrBuilder>(
+                  ts0_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          ts0_ = null;
+        }
+        return ts0Builder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3183,11 +3555,12 @@ public final class CartServiceProto {
       "\001(\003\022\n\n\002p1\030\002 \001(\t\"h\n\004Test\022\r\n\005index\030\001 \001(\003\022\'" +
       "\n\005test0\030\002 \001(\0132\030.com.hs.cart.proto.Test0\022" +
       "(\n\006tests0\030\003 \003(\0132\030.com.hs.cart.proto.Test" +
-      "0\"R\n\013CartRequest\022\016\n\006userId\030\001 \001(\003\022\014\n\004data" +
+      "0\"y\n\013CartRequest\022\016\n\006userId\030\001 \001(\003\022\014\n\004data" +
       "\030\002 \001(\t\022%\n\004test\030\003 \001(\0132\027.com.hs.cart.proto" +
-      ".Test\"E\n\014CartResponse\022\016\n\006result\030\001 \001(\005\022%\n" +
-      "\004test\030\002 \001(\0132\027.com.hs.cart.proto.Testb\006pr" +
-      "oto3"
+      ".Test\022%\n\003ts0\030\004 \003(\0132\030.com.hs.cart.proto.T" +
+      "est0\"E\n\014CartResponse\022\016\n\006result\030\001 \001(\005\022%\n\004" +
+      "test\030\002 \001(\0132\027.com.hs.cart.proto.Testb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3218,7 +3591,7 @@ public final class CartServiceProto {
     internal_static_com_hs_cart_proto_CartRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_hs_cart_proto_CartRequest_descriptor,
-        new java.lang.String[] { "UserId", "Data", "Test", });
+        new java.lang.String[] { "UserId", "Data", "Test", "Ts0", });
     internal_static_com_hs_cart_proto_CartResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_hs_cart_proto_CartResponse_fieldAccessorTable = new

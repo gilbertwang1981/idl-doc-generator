@@ -35,6 +35,8 @@ public class IDLObjectProcessorTest1 {
 		testMap.put("tests0-java.util.List-com.hs.cart.proto.CartServiceProto$Test0$Builder", test0List);
 		
 		attrMap.put("test-com.hs.cart.proto.CartServiceProto$Test$Builder" , testMap);
+		
+		attrMap.put("ts0-java.util.List-com.hs.cart.proto.CartServiceProto$Test0$Builder" , test0List);
 
 		IDLObjectProcessor processor = new IDLObjectProcessor();
 		Object object = processor.createAndInitializeObject("com.hs.cart.proto.CartServiceProto$CartRequest$Builder", attrMap);
@@ -50,6 +52,13 @@ public class IDLObjectProcessorTest1 {
 		List<Test0> tests0 = verify.getTest().getTests0List();
 		for (Test0 test0 : tests0) {
 			System.out.println(test0.getP0() + " " + test0.getP1());
+		}
+		
+		System.out.println("####################");
+		
+		List<Test0> ts0 = verify.getTs0List();
+		for (Test0 t0 : ts0) {
+			System.out.println(t0.getP0() + " " + t0.getP1());
 		}
 	}
 }
