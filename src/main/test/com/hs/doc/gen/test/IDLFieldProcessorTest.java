@@ -1,17 +1,13 @@
 package com.hs.doc.gen.test;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.protobuf.Message.Builder;
-import com.googlecode.protobuf.format.JsonFormat;
 import com.hs.cart.proto.CartServiceProto.CartRequest;
 import com.hs.cart.proto.CartServiceProto.Test0;
+import com.hs.doc.gen.deserialize.IDLObjectDeserializer;
 
 class SimpleObject {
 	private Long p0;
@@ -95,7 +91,8 @@ class UpperObject {
 }
 
 public class IDLFieldProcessorTest {
-	public static void main(String [] args) throws ClassNotFoundException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException {
+	public static void main(String [] args) throws Exception {
+		// 数据准备
 		SimpleObject simple = new SimpleObject();
 		simple.setP0(11111L);
 		simple.setP1("hello world,12434");
@@ -114,18 +111,15 @@ public class IDLFieldProcessorTest {
 		upper.setUserId(564343L);
 		upper.setTest(middle);
 		upper.setTs0(simples);
-		
 		String jsonString = new Gson().toJson(upper);
 		
-		Class<?> clazz = Class.forName("com.hs.cart.proto.CartServiceProto$CartRequest");
-		Method method = clazz.getMethod("newBuilder");
-
-		Builder builder = (Builder) method.invoke(null);
-		new JsonFormat().merge(new ByteArrayInputStream(jsonString.getBytes()) ,  builder);
+		// 转换
+		Builder builder = new IDLObjectDeserializer().deserialize("com.hs.cart.proto.CartServiceProto.CartRequest", jsonString);
 		
 		byte [] data = builder.build().toByteArray();
 		System.out.println(data.toString());
 		
+		// 验证
 		CartRequest.Builder t0 = (CartRequest.Builder)builder;
 		System.out.println(t0.getData() + "/" + t0.getEtValue() + "/" + t0.getUserId());
 		for (Test0 test0 : t0.getTs0List()) {
