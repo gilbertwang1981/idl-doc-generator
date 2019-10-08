@@ -113,6 +113,8 @@ public class IDLFieldProcessorTest {
 		upper.setTs0(simples);
 		String jsonString = new Gson().toJson(upper);
 		
+		System.out.println(jsonString);
+		
 		// 转换
 		Builder builder = new IDLObjectDeserializer().deserialize("com.hs.cart.proto.CartServiceProto.CartRequest", jsonString);
 		
