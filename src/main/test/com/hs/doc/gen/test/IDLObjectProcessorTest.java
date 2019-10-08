@@ -10,7 +10,7 @@ import com.hs.cart.proto.CartServiceProto.CartRequest;
 import com.hs.cart.proto.CartServiceProto.Test0;
 import com.hs.doc.gen.processor.IDLObjectProcessor;
 
-public class IDLObjectProcessorTest1 {
+public class IDLObjectProcessorTest {
 	public static void main(String [] args) throws Exception {
 		Map<String , Object> attrMap = new HashMap<>();
 		attrMap.put("userId-long", 1111);

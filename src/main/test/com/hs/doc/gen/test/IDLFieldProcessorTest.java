@@ -123,6 +123,9 @@ public class IDLFieldProcessorTest {
 		Builder builder = (Builder) method.invoke(null);
 		new JsonFormat().merge(new ByteArrayInputStream(jsonString.getBytes()) ,  builder);
 		
+		byte [] data = builder.build().toByteArray();
+		System.out.println(data.toString());
+		
 		CartRequest.Builder t0 = (CartRequest.Builder)builder;
 		System.out.println(t0.getData() + "/" + t0.getEtValue() + "/" + t0.getUserId());
 		for (Test0 test0 : t0.getTs0List()) {
