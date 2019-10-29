@@ -13,7 +13,7 @@ public class IDLFieldsProcessor {
 		try {
 			Class<?> targetClass = Class.forName(clazz);
 			
-			Field [] fields = targetClass.getDeclaredFields();
+			Field [] fields = targetClass.getDeclaredFields();	
 			for (Field field : fields) {
 				if (field.getName().equals(DocGeneratorConsts.DOC_LABEL_SERIAL_VERSION) || 
 					field.getName().equals(DocGeneratorConsts.DOC_LABEL_MEM_INIT) || 
@@ -40,6 +40,7 @@ public class IDLFieldsProcessor {
 				}
 			}
 		} catch (Exception e) {
+			System.out.println("异常:" + e.toString());
 		}
 	}
 }
