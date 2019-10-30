@@ -71,7 +71,7 @@ public class IDLDocProcessor extends AbstractProcessor {
 						Map<String, Object> parameters = new HashMap<>();
 						StringBuilder sbp = new StringBuilder(method.getParameterClassName());
 						sbp.replace(method.getParameterClassName().lastIndexOf(".") , method.getParameterClassName().lastIndexOf(".") + 1 , "$");
-						fieldsProcessor.processFields(parameters , sbp.toString());
+						fieldsProcessor.processFields(parameters , sbp.toString() , null , null);
 						method.setParameterDeclare(parameters);
 						
 						try {
@@ -83,7 +83,7 @@ public class IDLDocProcessor extends AbstractProcessor {
 						Map<String, Object> results = new HashMap<>();
 						StringBuilder sbr = new StringBuilder(method.getReturnClassName());
 						sbr.replace(method.getReturnClassName().lastIndexOf(".") , method.getReturnClassName().lastIndexOf(".") + 1 , "$");
-						fieldsProcessor.processFields(results , sbr.toString());
+						fieldsProcessor.processFields(results , sbr.toString() , null , null);
 						method.setResultDeclare(results);
 						
 						methods.add(method);

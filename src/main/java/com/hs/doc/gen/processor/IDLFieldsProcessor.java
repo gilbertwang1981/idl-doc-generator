@@ -9,7 +9,7 @@ import java.util.Map;
 import com.hs.doc.gen.consts.DocGeneratorConsts;
 
 public class IDLFieldsProcessor {
-	public void processFields(Map<String , Object> parameters , String clazz) {
+	public void processFields(Map<String , Object> parameters , String clazz , String upperClazz , String upperField) {		
 		try {
 			Class<?> targetClass = Class.forName(clazz);
 			
@@ -21,18 +21,24 @@ public class IDLFieldsProcessor {
 					field.getName().equals(DocGeneratorConsts.DOC_LABEL_PARSER) || 
 					field.getName().contains(DocGeneratorConsts.DOC_LABEL_FIELD_NUM) || 
 					field.getName().contains(DocGeneratorConsts.DOC_LABEL_BIT_FIELD)) {
+					
 					continue;
 				}
 				
-				if (field.getType().isMemberClass()) {
+				if (clazz.equalsIgnoreCase(upperClazz)) {
+					parameters.put(upperField , "recursion");
+					return;
+				}
+				
+				if (field.getType().isMemberClass()) {				
 					Map<String , Object> subMap = new HashMap<>();
-					this.processFields(subMap, field.getType().getName());
+					this.processFields(subMap, field.getType().getName() , clazz , field.getName().substring(0 , field.getName().length() - 1));
 					parameters.put(field.getName().substring(0 , field.getName().length() - 1) , subMap);
 				} else {
 					if (field.getType().getName().equals(DocGeneratorConsts.DOC_LABEL_LIST_NAME)) {
 						ParameterizedType pt = (ParameterizedType)field.getGenericType();
 						Map<String , Object> subMap = new HashMap<>();
-						this.processFields(subMap, pt.getActualTypeArguments()[0].getTypeName());
+						this.processFields(subMap, pt.getActualTypeArguments()[0].getTypeName() , clazz , field.getName().substring(0 , field.getName().length() - 1));
 						parameters.put(field.getName().substring(0 , field.getName().length() - 1) , Arrays.asList(subMap));
 					} else {
 						parameters.put(field.getName().substring(0 , field.getName().length() - 1) , field.getType().getName());
