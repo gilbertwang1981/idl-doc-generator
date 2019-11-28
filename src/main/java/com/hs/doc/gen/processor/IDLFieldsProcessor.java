@@ -25,6 +25,11 @@ public class IDLFieldsProcessor {
 					continue;
 				}
 				
+				if (clazz.equalsIgnoreCase(DocGeneratorConsts.DOC_LABEL_LONG_NAME)) {
+					parameters.put(upperField , "int64");
+					return;
+				}
+				
 				if (clazz.equalsIgnoreCase(upperClazz)) {
 					parameters.put(upperField , "recursion");
 					return;
