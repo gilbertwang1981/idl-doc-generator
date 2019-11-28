@@ -26,7 +26,7 @@ public class IDLFieldsProcessor {
 				}
 				
 				if (clazz.equalsIgnoreCase(DocGeneratorConsts.DOC_LABEL_LONG_NAME)) {
-					parameters.put(upperField , "int64");
+					parameters.put(upperField , "long");
 					return;
 				}
 				
